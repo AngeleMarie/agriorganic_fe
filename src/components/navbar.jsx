@@ -83,8 +83,8 @@ const Navbar = () => {
                 <NavLink
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-lg flex flex-row items-center mx-12 my-4 ${
-                    isActive ? "bg-green-500/20 h-12 w-56 px-2 " : "text-white"
+                  `text-lg flex flex-row items-center mx-12 my-24 ${
+                    isActive ? "bg-other-green/20 h-12 w-56 px-2 " : "text-white"
                   }`
                 }
                 onClick={closeMenu}

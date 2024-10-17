@@ -1,7 +1,7 @@
 export default function Footer() {
     const footerSections = [
       { 
-                links: ['AGRIORGANIC Farm Ltd - Est 2024', 'KG 655 ST, Kigali, Rwanda'] 
+                links: ['AGRIORGANIC Farm Ltd - Est 2024', 'Gatagara, Musanze, Rwanda'] 
       },
       { 
         title: 'Our Company', 
@@ -31,7 +31,7 @@ export default function Footer() {
                 <ul>
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex} className="mb-2">
-                      <a href="#" className="hover:underline">{link}</a>
+                      <a href="/" className="hover:underline">{link}</a>
                     </li>
                   ))}
                 </ul>

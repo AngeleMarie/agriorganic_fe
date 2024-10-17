@@ -10,7 +10,9 @@ export default {
         'main-green': '#102B26',
         'other-green': '#249402',
         'some-orange': '#EE6B19',
-        'blackie': '#2D2D2D', 
+        'blackie': '#2D2D2D',
+        'other':'#B1F3C0',
+        'some-blue':'#157870',
       },
  
     },
