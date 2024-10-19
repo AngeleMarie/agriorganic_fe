@@ -8,11 +8,12 @@ export default function HappyCustomers() {
     ]
   
     return (
-      <div className="py-20 bg-white">
+      <div className="py-20 bg-white relative">
         <div className="container mx-auto my-4">
         <p className='uppercase font-semibold text-center text-md text-other-green  '>testimonials</p>
         <p className="text-4xl font-bold text-center mb-6  capitalize text-main-green">Our happy customers</p>
         <p className='text-blackie text-center p-2'>Laoreet interdum phasellus ultrices id amet. Amet nibh varius fames vulputate. Gravida placerat velit amet.</p>
+        <img src="ellipse.svg" alt="ellipse" className='absolute top-12 left-12' />
           <div className="flex flex-row gap-x-12 justify-center  my-4">
             <img src="left.svg" alt="leftie" />
             {testimonials.map((testimonial, index) => (

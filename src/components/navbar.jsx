@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import {
-  MenuIcon,
-  XIcon,
-  SearchIcon,
+  Bars3Icon as MenuIcon,
+  XMarkIcon as XIcon,
+  MagnifyingGlassIcon as SearchIcon,
   UserIcon,
   ShoppingCartIcon,
-} from "@heroicons/react/outline";
-import { NavLink } from "react-router-dom";
+} from "@heroicons/react/24/outline";
+
+import { NavLink,Link } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { FaUserGroup } from "react-icons/fa6";
 import { GrCubes } from "react-icons/gr";
 import { IoNewspaperSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,7 +42,7 @@ const Navbar = () => {
     {
       icon: <FaPhoneAlt className="h-6 w-6 mr-4" />,
       name: "Contact Us",
-      path: "/contact",
+      path: "/contacts",
     },
   ];
 
@@ -54,7 +56,8 @@ const Navbar = () => {
 
   return (
     
-    <nav className="bg-main-green text-white py-4 px-12 flex justify-between items-center relative  w-full z-50">
+    <nav className="bg-main-green text-white py-4 px-12 flex justify-between items-center fixed  w-full z-50">
+      
       <button onClick={toggleMenu}>
         {isOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
       </button>
@@ -65,7 +68,9 @@ const Navbar = () => {
 
       <div className="hidden md:flex space-x-4">
         <SearchIcon className="h-6 w-6 cursor-pointer" />
+        <Link to="/register">
         <UserIcon className="h-6 w-6 cursor-pointer" />
+        </Link>
         <ShoppingCartIcon className="h-6 w-6 cursor-pointer" />
       </div>
 

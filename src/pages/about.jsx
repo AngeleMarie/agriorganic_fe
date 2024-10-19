@@ -2,10 +2,13 @@ import React from "react";
 import { FaBullseye } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import Navbar from "../components/navbar"
+import Footer from "../components/Footer"
 
 function About() {
   return (
     <div className="relative h-full">
+      <Navbar/>
       <div className="px-32 grid grid-cols-2">
         <img
           src="background.png"
@@ -222,6 +225,7 @@ function About() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
