@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import ProductShowcase from './ProductShowcase';
+import ProductShowcase from '../components/ProductShowcase';
 
 function CountdownTimer() {
   const [time, setTime] = useState({ hours: 3, minutes: 23, seconds: 19 });

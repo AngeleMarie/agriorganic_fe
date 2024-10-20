@@ -1,13 +1,12 @@
 import React from "react";
 import { FaBullseye } from "react-icons/fa6";
-import { IoIosArrowForward } from "react-icons/io";
-import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import Navbar from "../components/navbar"
 import Footer from "../components/Footer"
+import Management from "../components/Management";
 
 function About() {
   return (
-    <div className="relative h-full">
+    <div className="w-full relative h-full bg-white">
       <Navbar/>
       <div className="px-32 grid grid-cols-2">
         <img
@@ -38,24 +37,13 @@ function About() {
 
         <div className="mt-56">
           <h2 className="text-3xl font-semibold text-other-green mb-4">
-            Our History
+            History & Background
           </h2>
           <p className="text-xl font-normal mb-6">
-            At our company, our Customer Service Department is wholly committed
-            to delivering unparalleled service to our valued customers. From the
-            very first point of contact, customers are warmly welcomed with a
-            friendly smile and a supportive demeanor. Our team undergoes
-            rigorous training to adeptly handle customer requests and inquiries
-            with efficiency and efficacy, ensuring a remarkable experience that
-            upholds the elevated standards we hold dear.
+          AGRIORGANIC FARM Ltd was founded in July 2023 by students from the University of Rwanda's College of Agriculture, Food Science, and Forestry (CAFF). Their mission is to address challenges in the agricultural sector, with a focus on sustainability. The founders identified climate change and the growing accumulation of biodegradable waste in landfills as significant environmental issues. This waste, instead of being left to degrade, can be transformed into organic fertilizers to combat the reliance on chemical fertilizers, which harm soil health and reduce productivity.
           </p>
           <p className="text-xl font-normal">
-            Over the years, we have evolved our practices and expanded our
-            services to meet the changing needs of the agricultural community.
-            Our journey began with a small group of passionate individuals
-            dedicated to sustainable farming. Through innovation and commitment,
-            we have grown into a trusted partner for farmers, empowering them
-            with the tools and resources necessary for success.
+          We seek to promote organic farming practices that enhance soil fertility and boost crop yields. They also aim to address health risks linked to chemical fertilizers, including rising cancer rates and the decline of beneficial insects, which threaten biodiversity. The company's commitment extends to promoting organic pest management solutions that reduce the harmful impact on human health and the environment, making agriculture safer and more sustainable for future generations.
           </p>
           <button className="py-2 px-6 bg-other-green rounded-lg mt-6 text-white font-bold text-lg">
             Join our community
@@ -95,22 +83,19 @@ function About() {
             <p className="text-2xl font-bold p-2 text-main-green border-t-8 border-main-green w-[10%]">
               <span className="text-other-green">Our</span>
               <br />
-              Vision <br />
+              Mission <br />
             </p>
           </div>
         </div>
         <div className="flex mx-32 gap-32">
           <div className="relative bottom-20  bg-[#D2FFDE] h-[30%] w-[23%] rounded-xl p-6">
             <div className="flex gap-2">
-              <FaBullseye className=" w-5 h-5 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
-              <h1 className="text-other-green font-bold">Reach the goals</h1>
+              <FaBullseye className=" w-8 h-8  text-other-green  bg-[#266937] bg-opacity-30 p-1 rounded-md " />
+              <p className="text-other-green font-bold pb-2 text-center">Promotion of Organic Farming and Agroecological Practices</p>
             </div>
 
-            <p>
-              Throughout your journey, our service provides unwavering support,
-              offering personalized guidance to help you efficiently reach your
-              goals. By prioritizing your well-being and fostering
-              self-confidence, we are dedicated to ensuring your success.
+            <p className="text-justify">
+   By focusing on natural, sustainable methods that protect the environment and improve soil health and crop productivity. The company believes in farming that works in harmony with nature to preserve ecosystems for future generations.
             </p>
           </div>
           <img
@@ -120,29 +105,23 @@ function About() {
           />
           <div className="bg-[#D2FFDE] h-[30%] w-[23%] rounded-xl p-6">
             <div className="flex gap-2">
-              <FaBullseye className=" w-5 h-5 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
-              <h1 className="text-other-green font-bold">Reach the goals</h1>
+              <FaBullseye className=" w-8 h-8 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
+              <h1 className="text-other-green font-bold text-center">Advocacy for Sustainable Food Systems</h1>
             </div>
 
-            <p>
-              Throughout your journey, our service provides unwavering support,
-              offering personalized guidance to help you efficiently reach your
-              goals. By prioritizing your well-being and fostering
-              self-confidence, we are dedicated to ensuring your success.
+            <p className="text-justify">
+              Throughout promoting locally sourced, organic produce that supports consumer health and environmental protection. The company encourages waste reduction, biodiversity preservation, and minimizing harmful chemicals, aiming to build a resilient and sustainable agricultural economy for the benefit of all.
             </p>
           </div>
         </div>
         <div className="relative left-[500px] mt-16 bg-[#D2FFDE] h-[30%] w-[23%] rounded-xl p-6">
           <div className="flex gap-2">
-            <FaBullseye className=" w-5 h-5 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
-            <h1 className="text-other-green font-bold">Reach the goals</h1>
+            <FaBullseye className=" w-8 h-8 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
+            <h1 className="text-other-green font-bold text-center">Fostering Research, Innovation, and Farmer Education</h1>
           </div>
 
-          <p>
-            Throughout your journey, our service provides unwavering support,
-            offering personalized guidance to help you efficiently reach your
-            goals. By prioritizing your well-being and fostering
-            self-confidence, we are dedicated to ensuring your success.
+          <p className="text-justify">
+          We focus on research and innovation in sustainable agriculture, seeking better organic farming and pest management techniques. They prioritize educating and empowering local farmers, equipping them with the tools and knowledge to adopt sustainable practices, improve yields, and protect the environment.
           </p>
         </div>
       </div>
@@ -152,7 +131,7 @@ function About() {
           <h1 className="text-2xl text-other-green mx-32">
             Recently completed works
           </h1>
-          <h1 className="text-4xl text-white mx-32">Explore our project</h1>
+          <h1 className="text-4xl text-white mx-32 capitalize">Explore our Current project</h1>
         </div>
         <div className="mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-4">
           <img src="proj1.png" alt="proj1" />
@@ -162,7 +141,7 @@ function About() {
         </div>
       </div>
 
-      <div className=" bg-white px-32 grid grid-cols-2">
+      <div className=" w-full bg-white px-32 ">
         <img
           src="bgServ.png"
           alt="background"
@@ -170,58 +149,29 @@ function About() {
         />
 
         <div className="my-24">
-          <p className="text-2xl font-bold p-2 text-main-green border-t-8 border-main-green w-[20%]">
-            <span className="text-other-green">Meet our</span>
-            <br />
-            Department <br />
-          </p>
-          <img src="depart.png" alt="project1" className="w-[70%] rounded-lg" />
-        </div>
-
-        <div className="mt-48 flex">
-          <span className="text-other-green">
-            <RiDoubleQuotesL className=" w-10 h-10 mr-10" />
-          </span>
-
-          <p className="text-xl font-normal mb-6 w-[70%]">
-            At our company, our Customer Service Department is wholly committed
-            to delivering unparalleled service to our valued customers. From the
-            very first point of contact, customers are warmly welcomed with a
-            friendly smile and a supportive demeanor. Our team undergoes
-            rigorous training to adeptly handle customer requests and inquiries
-            with efficiency and efficacy, ensuring a remarkable experience that
-            upholds the elevated standards we hold dear.
-          </p>
-          <span className="text-other-green mt-56 ">
-            <RiDoubleQuotesR className=" w-10 h-10 mr-10" />
-          </span>
-
-          <IoIosArrowForward className="mt-24 ml-2 w-16 h-16" />
+          <Management/>
         </div>
       </div>
        <div className="bg-white h-full w-full py-20">
         <div className="bg-[#0C2A19] mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-3">
           <div className="text-white border-r-2 px-20 border-other-green">
-            <p className="font-bold text-xl">Good to Great Culture</p>
-            <p>+ Methodical</p>
-            <p>+ Proactive
-            </p>
-            <p>+ System and process Improvement</p>
-            <p>+ Structure</p>
+            <p className="font-bold text-xl py-2">Health and Well-being</p>
+            <p>+ Nutritional Quality</p>
+            <p>+ Preventive Approach  </p>
+            <p>+ Mental Health Benefits</p>
+        
           </div>
           <div className="text-white  border-r-2 px-20 py-6 border-other-green">
-            <p className="font-bold text-xl">Growing</p>
-            <p>From 0 meals to 1,500,00
-<br />million per year</p>
+            <p className="font-bold text-xl py-2">Environmental Sustainability</p>
+            <p>+ Resource Conservation</p>
+<p>+ Reduced Carbon Footprint</p>
+<p>+ Ecosystem Health</p>
           </div>
           <div className="text-white">
-            <p className="font-bold text-xl">Well Balance</p>
-            <p>+ Work life balance 
-
-</p>
-<p>+ Enjoyable environment
-</p>
-<p>+ Friendship and family</p>
+            <p className="font-bold text-xl py-2">Economic Viability and Equity</p>
+            <p>+ Fair Trade Practices </p>
+            <p>+ Local Economies</p>
+            <p>+ Accessibility and Affordability</p>
           </div>
         </div>
       </div>

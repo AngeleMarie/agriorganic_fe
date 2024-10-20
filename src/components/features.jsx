@@ -1,15 +1,15 @@
 import React from 'react';
-import { Check, Leaf, Recycle, Sun, Droplet, ThumbsUp } from 'lucide-react';
+import { FaLeaf, FaRecycle, FaSun, FaWater, FaCheckCircle, FaThumbsUp } from 'react-icons/fa';
 
 export default function WhyAgriorganic() {
   const features = [
-    { icon: Leaf, title: 'Eco-friendly', description: 'Our products are environmentally conscious and sustainable.' },
-    { icon: Recycle, title: 'Sustainable', description: 'We use renewable resources and promote circular economy.' },
-    { icon: Sun, title: 'Natural', description: 'All ingredients are sourced from nature, no artificial additives.' },
-    { icon: Droplet, title: 'Pure', description: 'Our products are free from harmful chemicals and pesticides.' },
-    { icon: Check, title: 'Certified', description: 'We hold all relevant organic and quality certifications.' },
-    { icon: ThumbsUp, title: 'Easy', description: 'Our products are user-friendly and easy to apply.' },
-  ];
+    { icon: FaLeaf, title: 'Eco-friendly', description: 'Our products are environmentally conscious and sustainable.' },
+    { icon: FaRecycle, title: 'Sustainable', description: 'We use renewable resources and promote a circular economy.' },
+    { icon: FaSun, title: 'Protein Providers (PP)', description: 'All ingredients are sourced from nature, with no artificial additives.' },
+    { icon: FaWater, title: 'Pure', description: 'Our products are free from harmful chemicals and pesticides.' },
+    { icon: FaCheckCircle, title: 'Organic Certification Support', description: 'We hold all relevant organic and quality certifications.' },
+    { icon: FaThumbsUp, title: 'Cost Effective', description: 'Our products are user-friendly and easy to apply.' },
+];
 
   const leftFeatures = features.slice(0, 3);
   const rightFeatures = features.slice(3);
@@ -19,7 +19,7 @@ export default function WhyAgriorganic() {
       <div className="container mx-auto px-4">
       <p className='uppercase font-semibold text-center text-md text-other-green  '>Brand Features</p>
         <p className="text-4xl font-bold text-center mb-6 text-main-green">Why Agriorganic ?</p>
-        <p className='text-blackie text-center p-3'>Laoreet interdum phasellus ultrices id amet. Amet nibh varius fames vulputate. Gravida placerat velit amet.</p>
+        <p className='text-main-green w-2/3 text-center text-lg mx-auto pb-8'>Agriorganic is committed to redefining agriculture by focusing on sustainable practices that prioritize the health of our soil, crops, and communities. We believe in:</p>
         
         <div className="flex flex-wrap justify-center items-center">
           <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8 md:mb-0">

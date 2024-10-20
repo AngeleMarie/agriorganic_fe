@@ -27,7 +27,7 @@ function Home() {
           Healthy Soil, Sustainable Agriculture
         </p>
         <p className="p-2 w-1/2 text-justify text-main-green">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit vel, vestibulum pellentesque habitant. Condimentum ullamcorper et sollicitudin pellentesque.
+        By nurturing the soil, we cultivate resilient ecosystems that support thriving crops and a healthier planet.
         </p>
         <button className="m-2 capitalize bg-some-orange rounded-md shadow-md font-semibold text-white h-12 py-2 px-12">
           visit the shop

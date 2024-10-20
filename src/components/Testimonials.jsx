@@ -1,11 +1,30 @@
 import React from 'react'
 
 export default function HappyCustomers() {
-    const testimonials = [
-      { name: 'Customer 1', text: 'Great product!', rating: 5,desc:"Gravida molestie turpis et tortor dolor cursus odio enim.",prof:"profile.png" },
-      { name: 'Customer 2', text: 'Excellent service!', rating: 5,desc:"Gravida molestie turpis et tortor dolor cursus odio enim.",prof:"profile.png" },
-      { name: 'Customer 3', text: 'Highly recommended!', rating: 5,desc:"Gravida molestie turpis et tortor dolor cursus odio enim.",prof:"profile.png" },
-    ]
+  const testimonials = [
+    {
+      name: 'Sarah T.',
+      text: 'Exceptional Quality!',
+      rating: 5,
+      desc: "Since using Agriorganic, my crops have thrived like never before. The nutrients are top-notch, and my soil health has significantly improved.",
+      prof: "profile.png"
+    },
+    {
+      name: 'David M.',
+      text: 'Outstanding Service!',
+      rating: 5,
+      desc: "The team at Agriorganic is incredibly supportive and knowledgeable. They helped me choose the right products for my needs, and their customer service is unmatched.",
+      prof: "profile.png"
+    },
+    {
+      name: 'Emily R.',
+      text: 'A Game Changer!',
+      rating: 5,
+      desc: "Agriorganic has transformed my gardening business. Their eco-friendly products are effective and easy to use, making my work much more enjoyable.",
+      prof: "profile.png"
+    },
+  ];
+  
   
     return (
       <div className="py-20 bg-white relative">
