@@ -45,7 +45,7 @@ export default function Updates() {
       <div className="max-w-7xl mx-auto">
       <p className='uppercase font-semibold text-center text-md text-other-green  '>TRENDING</p>
         <p className="text-4xl font-bold text-center mb-4 text-main-green">Latest News</p>
-        <p className='text-blackie text-center p-3'>Laoreet interdum phasellus ultrices id amet. Amet nibh varius fames vulputate. Gravida placerat velit amet.</p>
+        <p className='text-blackie text-center p-3'>Stay informed with the latest updates and trends in agriculture, sustainability, and innovation. Our trending news highlights crucial developments and insights that impact the Agriorganic community and beyond.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  my-4 gap-8">
           {newsItems.map((item, index) => (
             <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">

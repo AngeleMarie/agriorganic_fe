@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios"; 
 import { FaXTwitter } from "react-icons/fa6";
 import { LuLinkedin } from "react-icons/lu";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
@@ -23,9 +24,26 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
+
+    try {
+      const response = await axios.post('http://localhost:7654/api/v1/problems/addProblem', formData); 
+      console.log("Response from server:", response.data);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        subject: "General Inquiry",
+        message: "",
+      });
+      alert("Message sent successfully!");
+    } catch (error) {
+      console.log("Error sending message:", error);
+      alert("There was an error sending your message.");
+    }
   };
 
   return (
@@ -178,20 +196,13 @@ export default function ContactPage() {
                   onChange={handleInputChange}
                   placeholder="Write your message..."
                   className="border-b-2 border-gray-50/12 text-other-green w-full focus:py-2 outline-none"
-                  rows={4}
                   required
                 />
               </div>
 
-              <div className="text-right">
-                <button
-                  type="submit"
-                  className="bg-[#266937] font-semibold mb-32 pointer hover:bg-green-800 p-3 rounded-md shadow-md text-white"
-                >
-                  Send Message
-                </button>
-              </div>
-              <img src="send.svg" className="absolute bottom-0 right-8" alt="send" />
+              <button type="submit" className="bg-main-green text-white font-semibold py-2 px-4 rounded-lg">
+                Send Message
+              </button>
             </form>
           </div>
         </div>

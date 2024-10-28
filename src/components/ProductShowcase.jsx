@@ -9,7 +9,8 @@ const products = [
 ];
 
 export default function ProductShowcase({ title }) {
-  const [favorites, setFavorites] = useState({}); // Keeps track of which products are marked as favorites
+  // State for favorites
+  const [favorites, setFavorites] = useState({});
 
   const toggleFavorite = (productId) => {
     setFavorites((prevFavorites) => ({
@@ -20,22 +21,18 @@ export default function ProductShowcase({ title }) {
 
   return (
     <div>
-      
-  
       {title && <h2 className="text-3xl text-main-green font-bold my-12">{title}</h2>}
-     
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {products.map((product) => (
           <div key={product.id} className="bg-white p-4 rounded-lg shadow">
             <div className="relative">
-              <img src={product.image} alt={product.name} className="w-auto h-auto object-cover mb-4" />
+              <img src={product.image} alt={` ${product.name}`} className="w-auto h-auto object-cover mb-4" />
               <button
                 onClick={() => toggleFavorite(product.id)}
                 className="absolute top-2 right-2 p-1 bg-white rounded-sm shadow-md"
+                aria-label={favorites[product.id] ? 'Remove from favorites' : 'Add to favorites'}
               >
-                                <Heart
-                  className={`w-5 h-5 ${favorites[product.id] ? 'text-red-500' : ''}`} // Change color when clicked
-                />
+                <Heart className={`w-5 h-5 ${favorites[product.id] ? 'text-red-500' : ''}`} />
               </button>
             </div>
             <h3 className="font-semibold mb-2">{product.name}</h3>

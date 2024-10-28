@@ -7,7 +7,7 @@ export default function DiscountBanner() {
     <div className="bg-main-green text-white px-8 py-2 rounded-lg mb-8 flex justify-between items-center relative">
       <div>
         <div className='flex flex-row px-12 my-8'>
-            <img src="picon.svg" alt="plantie"  className='mx-4 '/>
+            <img src="/picon.svg" alt="plantie"  className='mx-4 '/>
             <p className='text-white font-medium py-2'>Get a discount</p>
         </div>
         <h2 className="text-5xl font-semibold  w-2/3 px-12 mb-12">Up to 10% off Voucher</h2>

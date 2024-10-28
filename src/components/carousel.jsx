@@ -51,7 +51,7 @@ export default function CenteredTextNewsCarousel() {
             />
             <div className="absolute inset-0 bg-other-green opacity-20 transition-opacity duration-700 ease-in-out" />
           </div>
-          
+        
           <div className="relative h-full flex flex-col justify-center items-center p-6 my-12 text-white">
             <div className="max-w-4xl text-center ">
               <h3 className="text-2xl md:text-5xl text-white font-bold mb-4 drop-shadow-lg">

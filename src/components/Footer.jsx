@@ -25,7 +25,7 @@ export default function Footer() {
               <div key={index}>
             
                 {index === 0 && (
-                  <img src="agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32" />
+                  <img src="/agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32" />
                 )}
                 <h3 className="font-semibold mb-4">{section.title}</h3>
                 <ul>

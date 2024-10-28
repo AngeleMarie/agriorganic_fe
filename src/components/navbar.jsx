@@ -71,7 +71,9 @@ const Navbar = () => {
         <Link to="/register">
         <UserIcon className="h-6 w-6 cursor-pointer" />
         </Link>
+        <Link to="/cart">
         <ShoppingCartIcon className="h-6 w-6 cursor-pointer" />
+        </Link>
       </div>
 
       {isOpen && <div className="fixed inset-0 bg-black opacity-50" onClick={closeMenu}></div>}

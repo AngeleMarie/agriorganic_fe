@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PlusIcon, TrashIcon, EyeIcon, PencilIcon } from '@heroicons/react/20/solid';
 import Sidebar from '../components/adminSide';
 import TopBar from '../components/topBar';
 import AddProductModal from '../components/productForm'; 
 import ProductDetailsModal from '../components/viewProduct'; 
 import EditProductModal from '../components/editProduct';
+import axios from 'axios'; // Import axios for API requests
 
 export default function AdminProductList() {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'LCD Monitor', price: 650, quantity: 1, image: '/prod.png?height=50&width=50&text=LCD', description: 'High quality LCD monitor', usageGuide: 'Connect to power and computer' },
-    { id: 2, name: 'H1 Gamepad', price: 550, quantity: 2, image: '/prod.png?height=50&width=50&text=H1', description: 'Comfortable gamepad for PC', usageGuide: 'Connect via USB or Bluetooth' },
-  ]);
-
+  const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
     name: '',
     price: 0,
@@ -20,12 +17,27 @@ export default function AdminProductList() {
     usageGuide: '',
     image: '/prod.png?height=50&width=50&text=New',
   });
-
   const [selectedProduct, setSelectedProduct] = useState(null); 
   const [message, setMessage] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false); 
   const [isDetailsModalOpen, setDetailsModalOpen] = useState(false); 
   const [isEditModalOpen, setEditModalOpen] = useState(false); 
+
+  
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:7654/api/v1/admin/products/'); // Adjust the URL as needed
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setMessage({ text: 'Failed to fetch products', type: 'error' });
+        setTimeout(() => setMessage(null), 3000);
+      }
+    };
+
+    fetchProducts();
+  }, []); 
 
   const calculateSubtotal = (price, quantity) => {
     return price * quantity;
@@ -41,11 +53,12 @@ export default function AdminProductList() {
     const { name, value } = e.target;
     setNewProduct((prev) => ({
       ...prev,
-      [name]: name === 'price' || name === 'quantity' ? Number(value) : value,
+      [name]: name === 'price' || name === 'quantity' ? parseFloat(value) : value,
     }));
   };
-
+  
   const addNewProduct = () => {
+    console.log('New Product:', newProduct); 
     if (newProduct.name && newProduct.price > 0 && newProduct.quantity >= 0) {
       const newId = Math.max(...products.map((p) => p.id), 0) + 1;
       setProducts([...products, { ...newProduct, id: newId }]);
@@ -57,11 +70,15 @@ export default function AdminProductList() {
     }
     setTimeout(() => setMessage(null), 3000);
   };
-
+  
   const handleProductChange = (e) => {
     const { name, value } = e.target;
-    setSelectedProduct((prev) => ({ ...prev, [name]: name === 'price' || name === 'quantity' ? Number(value) : value }));
-  };
+    setSelectedProduct((prev) => ({
+        ...prev,
+        [name]: name === 'price' || name === 'quantity' ? Number(value) : value
+    }));
+};
+
 
   const updateProduct = (e) => {
     e.preventDefault();
@@ -113,9 +130,9 @@ export default function AdminProductList() {
                       <img src={product.image} alt={product.name} className="w-12 h-12 mr-2" />
                       {product.name}
                     </td>
-                    <td className="py-2 px-4">${product.price.toFixed(2)}</td>
-                    <td className="py-2 px-12">{product.quantity}</td>
-                    <td className="py-2 px-4">${calculateSubtotal(product.price, product.quantity).toFixed(2)}</td>
+                    <td className="py-2 px-4">{parseInt(product?.price).toFixed(2)} Frw</td>
+                    <td className="py-2 px-12">{parseInt(product.quantity).toFixed(2)}</td>
+                    <td className="py-2 px-4">{calculateSubtotal(product.price, product.quantity)} Frw</td>
                     <td className="py-2 px-4 flex space-x-2">
                       <button 
                         className="ml-2 text-blue-600 hover:text-blue-800" 
@@ -146,6 +163,7 @@ export default function AdminProductList() {
           isOpen={isModalOpen}
           onClose={() => setModalOpen(false)} 
           newProduct={newProduct}
+          setNewProduct={setNewProduct}
           handleNewProductChange={handleNewProductChange}
           addNewProduct={addNewProduct}
         />
@@ -156,13 +174,15 @@ export default function AdminProductList() {
           product={selectedProduct}
         />
 
-        <EditProductModal
-          isOpen={isEditModalOpen}
-          onClose={() => setEditModalOpen(false)}
-          product={selectedProduct}
-          handleProductChange={handleProductChange}
-          updateProduct={updateProduct}
-        />
+<EditProductModal
+    isOpen={isEditModalOpen}
+    onClose={() => setEditModalOpen(false)}
+    product={selectedProduct}
+    setEditProduct={setSelectedProduct}
+    handleProductChange={handleProductChange} // Ensure this is correctly passed
+    updateProduct={updateProduct}
+/>
+
       </div>
     </div>
   );
