@@ -8,13 +8,17 @@ export default function Footer() {
         links: ['Search', 'Privacy Statement', 'Join Our Affiliate', 'Tortum Blog'] 
       },
       { 
+        title: 'Reach Out', 
+        links: ['+250787641599', 'agriorganicfarmltd5@gmail.com', 'Twitter', 'LinkedIn', 'Facebook'] 
+      },
+      { 
         title: 'Support', 
         links: ['FAQ', 'Help Center', 'Reach Out', 'Sitemap'] 
       },
       { 
         title: 'Legal', 
         links: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'] 
-      },
+      }
     ];
   
     return (

@@ -27,10 +27,10 @@ export default function LoginPage() {
         if (!response.ok) {
             const text = await response.text(); // Get the raw text response
             try {
-                const data = JSON.parse(text); // Try to parse it as JSON
+                const data = JSON.parse(text); 
                 setError(data.error || 'An error occurred during login.');
             } catch {
-                setError('Failed to parse response from server.'); // If parsing fails
+                setError('Failed to parse response from server.'); 
             }
             return;
         }

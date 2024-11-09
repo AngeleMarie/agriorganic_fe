@@ -17,16 +17,20 @@ const WishlistAndCategories = ({ user }) => {
 
   useEffect(() => {
     if (user && user._id) {
+      console.log('User ID:', user._id);
       const fetchWishlist = async () => {
         try {
           const response = await axios.get(`http://localhost:7654/api/v1/users/wishlist/${user._id}`);
           setProducts(response.data);
+          console.log(response.data);
         } catch (error) {
           console.error('Error fetching products:', error);
+          console.log('Error details:', error.response);
           setMessage({ text: 'Failed to fetch products', type: 'error' });
           setTimeout(() => setMessage(null), 3000);
         }
       };
+      
       fetchWishlist();
     }
   }, [user]);

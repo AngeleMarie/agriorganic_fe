@@ -3,6 +3,7 @@ import { FaBullseye } from "react-icons/fa6";
 import Navbar from "../components/navbar"
 import Footer from "../components/Footer"
 import Management from "../components/Management";
+import Project from "../components/Project";
 
 function About() {
   return (
@@ -32,7 +33,7 @@ function About() {
             <br />
             Our History <br />
           </p>
-          <img src="proj1.png" alt="project1" className="w-[70%] rounded-lg" />
+          <img src="poj1.jpg" alt="project1" className="w-[70%]  h-[650px] rounded-lg" />
         </div>
 
         <div className="mt-56">
@@ -128,16 +129,14 @@ function About() {
 
       <div className="bg-main-green h-full w-full py-20">
         <div className="text-center">
-          <h1 className="text-2xl text-other-green mx-32">
+          <p className="uppercase font-semibold text-center text-md text-other-green ">
             Recently completed works
-          </h1>
-          <h1 className="text-4xl text-white mx-32 capitalize">Explore our Current project</h1>
+          </p>
+          <p className="text-4xl font-bold text-center mb-3 text-some-blue">Explore our Current project</p>
+          <p className="text-white text-center  w-2/3 mx-auto text-lg font-normal py-3">Research about assessing biopestide effectivess on treating and preventing pest and disease on maize, beans, and Potatoes in Muko and Gataraga sectors of Musanze district</p>
         </div>
-        <div className="mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-4">
-          <img src="proj1.png" alt="proj1" />
-          <img src="proj2.png" alt="proj1" />
-          <img src="proj3.png" alt="proj1" />
-          <img src="proj4.png" alt="proj1" />
+        <div className="mt-4 py-10 mx-32 justify-items-center justify-center items-center  ">
+       <Project/>
         </div>
       </div>
 
