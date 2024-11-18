@@ -7,14 +7,13 @@ import HappyCustomers from '../components/Testimonials'
 import Newsletter from '../components/newsLetter'
 import Benefits from '../components/services'
 
-import Servs from '../components/ourServices'
 
 function LandingPage() {
   return (
     <div>
               <Home/>
       <Collaborators/>
-     {/* <Servs/> */}
+
       <Features/>
       <Goods/>
       <HappyCustomers/>

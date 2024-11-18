@@ -55,34 +55,35 @@ const BlogGrid = () => {
       date: "20 Feb 2023",
       comments: 0,
       title: "Agroecological and climate-smart solution advocacy",
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"
+      excerpt: "Advocating for agroecological practices and climate-smart solutions to support sustainable agriculture and combat climate change."
     },
     {
       img: "/service1.png?height=300&width=400",
       date: "18 Feb 2023",
       comments: 0,
-      title: "Agricultural Research and Innovation ",
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"
+      title: "Agricultural Research and Innovation",
+      excerpt: "Exploring innovative agricultural research methods to improve farming practices, boost productivity, and address food security challenges."
     },
     {
       img: "/service.png?height=300&width=400",
       date: "18 Feb 2023",
       comments: 0,
       title: "Farmers capacity Building and Advisory services",
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"
+      excerpt: "Providing training and expert advisory services to empower farmers with the knowledge and tools needed for sustainable farming."
     },
     {
       img: "/service3.png?height=300&width=400",
       date: "16 Feb 2023",
       comments: 0,
       title: "Sustainable organic inputs production",
-      excerpt: "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore"
+      excerpt: "Focusing on the production of sustainable organic inputs to enhance soil health and promote eco-friendly farming practices."
     }
   ];
 
+
   return (
-    <section className="container mx-auto px-4 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section className="container mx-56 px-4 py-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {posts.map((post, index) => (
           <BlogCard key={index} {...post} />
         ))}
@@ -95,7 +96,7 @@ const BlogGrid = () => {
 // Main Component
 const ourServices = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen mt-24 bg-gray-50">
     
       <Hero />
       <div className='mt-12'>

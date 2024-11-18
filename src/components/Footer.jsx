@@ -1,52 +1,79 @@
+import { FaXTwitter } from "react-icons/fa6";
+import { LuLinkedin } from "react-icons/lu";
+import { Facebook } from "lucide-react";
+
 export default function Footer() {
     const footerSections = [
-      { 
-                links: ['AGRIORGANIC Farm Ltd - Est 2024', 'Gatagara, Musanze, Rwanda'] 
-      },
-      { 
-        title: 'Our Company', 
-        links: ['Search', 'Privacy Statement', 'Join Our Affiliate', 'Tortum Blog'] 
-      },
-      { 
-        title: 'Reach Out', 
-        links: ['+250787641599', 'agriorganicfarmltd5@gmail.com', 'Twitter', 'LinkedIn', 'Facebook'] 
-      },
-      { 
-        title: 'Support', 
-        links: ['FAQ', 'Help Center', 'Reach Out', 'Sitemap'] 
-      },
-      { 
-        title: 'Legal', 
-        links: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'] 
-      }
+        { 
+            links: [] 
+        },
+        { 
+            title: 'Our Company', 
+            links: ['Search', 'Privacy Statement', 'Join Our Affiliate', 'Tortum Blog'] 
+        },
+        { 
+            title: 'Reach Out', 
+            links: ['+250787641599', 'agriorganicfarmltd5@gmail.com'] 
+        },
+        { 
+            title: 'Support', 
+            links: ['Help Center', 'Reach Out', 'Sitemap'] 
+        },
+        { 
+            title: 'Legal', 
+            links: ['Terms of Service', 'Privacy Policy', 'Cookie Policy'] 
+        }
     ];
-  
+
     return (
-      <footer className="bg-blackie text-white py-10">
-        <div className="container mx-auto">
-          <div className="flex justify-between">
-            {footerSections.map((section, index) => (
-              <div key={index}>
-            
-                {index === 0 && (
-                  <img src="/agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32" />
-                )}
-                <h3 className="font-semibold mb-4">{section.title}</h3>
-                <ul>
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex} className="mb-2">
-                      <a href="/" className="hover:underline">{link}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 pt-8 text-center">
-            <p><span>Copyright</span>&copy; 2024 Agriorganic. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+        <footer className="bg-blackie text-white py-10">
+            <div className="container mx-auto">
+                <div className="flex justify-between">
+                    {footerSections.map((section, index) => (
+                        <div key={index}>
+                            {index === 0 && (
+                                <div>
+                                    <img src="/agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32" />
+                                    <p className="text-sm mb-4">AGRIORGANIC Farm Ltd - Est 2024</p>
+                                    <p className="text-sm mb-4">Gatagara, Musanze, Rwanda</p>
+                                    {/* Social media icons */}
+                                    <div className="flex space-x-4 mt-4">
+                                        <div 
+                                            className="bg-[#266937] rounded-full p-2 shadow-md hover:bg-white hover:text-[#266937]" 
+                                            onClick={() => window.open('https://www.linkedin.com/company/agriorganic-farm-ltd/posts/?feedView=all', '_blank')}
+                                        >
+                                            <LuLinkedin className="w-6 h-6 cursor-pointer" />
+                                        </div>
+                                        <div 
+                                            className="bg-[#266937] rounded-full p-2 shadow-md hover:bg-white hover:text-[#266937]" 
+                                            onClick={() => window.open('https://twitter.com/Agri_Rwanda/', '_blank')}
+                                        >
+                                            <FaXTwitter className="w-6 h-6 cursor-pointer" />
+                                        </div>
+                                        <div 
+                                            className="bg-[#266937] rounded-full p-2 shadow-md hover:bg-white hover:text-[#266937]" 
+                                            onClick={() => window.open('https://www.facebook.com/profile.php?id=61553567904876', '_blank')}
+                                        >
+                                            <Facebook className="w-6 h-6 cursor-pointer" />
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
+                            <h3 className="font-semibold mb-4">{section.title}</h3>
+                            <ul>
+                                {section.links.map((link, linkIndex) => (
+                                    <li key={linkIndex} className="mb-2">
+                                        <a href="/" className="hover:underline">{link}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-8 pt-8 text-center">
+                    <p><span>Copyright</span>&copy; 2024 Agriorganic. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     );
-  }
-  
+}

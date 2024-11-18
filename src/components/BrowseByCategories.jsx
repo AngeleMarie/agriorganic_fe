@@ -3,12 +3,11 @@ import { ChevronLeft, ChevronRight, Monitor, Cpu, Package, Leaf } from 'lucide-r
 
 
 const categories = [
-  { name: 'Workstations', icon: Monitor },
-  { name: 'Drones/Robots', icon: Cpu },
-  { name: 'Kits', icon: Package },
-  { name: 'Mini-Plant', icon: Leaf },
+  { name: "Vermicompost", icon: "🪱" },
+  { name: "Biopesticides", icon: "🌳" },
+  { name: "Microbes", icon: "🪰" },
+  { name: "Extension Services", icon: "🎧" },
 ];
-
 export default function BrowseByCategory() {
   return (
     <section className="mb-8">
@@ -26,14 +25,14 @@ export default function BrowseByCategory() {
           <button variant="outline" className="p-2"><ChevronRight className="w-4 h-4" /></button>
         </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {categories.map((category, index) => (
-          <div key={index} className="bg-white p-4 rounded-lg shadow text-center">
-            <category.icon className="w-12 h-12 mx-auto mb-2 text-green-600" />
-            <span>{category.name}</span>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {categories.map((category, index) => (
+              <div key={index} className="border rounded-lg cursor-pointer p-4 text-center hover:shadow-2xl hover:text-white hover:bg-main-green transition duration-300">
+                <div className="text-4xl mb-2">{category.icon}</div>
+                <h3 className="font-semibold">{category.name}</h3>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
     </section>
   );
 }

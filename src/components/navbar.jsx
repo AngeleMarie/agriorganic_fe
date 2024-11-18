@@ -46,7 +46,7 @@ const Navbar = () => {
     <nav className=" navbar bg-main-green text-white py-4  flex justify-between items-center w-full z-50 px-12">
       {/* Logo Section */}
       <div className="flex items-center">
-        <img src="/agriorganic.png" alt="Logo" className="h-12 mr-6" />
+        <img src="/agriorganic.png" alt="Logo" className="h-24 ml-24" />
       </div>
 
       {/* Navbar Links */}
@@ -56,7 +56,7 @@ const Navbar = () => {
             key={index}
             to={link.path}
             className={({ isActive }) =>
-              `flex items-center text-lg ${
+              `flex items-center text-xl ${
                 isActive ? "text-other-green font-semibold px-2 py-1 rounded" : "text-white"
               }`
             }
@@ -68,7 +68,7 @@ const Navbar = () => {
       </div>
 
       {/* Icons Section */}
-      <div className="bg-other-green px-4  py-2 rounded-lg hover:bg-green-700 hover:font-semibold">
+      <div className="bg-other-green px-4 font-medium text-xl  py-3 rounded-lg hover:bg-green-700 hover:underline">
         <Link to="/register">
           Get Started
         </Link>

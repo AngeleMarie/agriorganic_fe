@@ -14,14 +14,14 @@ export default function HappyCustomers() {
       text: 'Outstanding Service!',
       rating: 5,
       desc: "The team at Agriorganic is incredibly supportive and knowledgeable. They helped me choose the right products for my needs, and their customer service is unmatched.",
-      prof: "profile.png"
+      prof: "profile1.png"
     },
     {
       name: 'Emily R.',
       text: 'A Game Changer!',
       rating: 5,
       desc: "Agriorganic has transformed my gardening business. Their eco-friendly products are effective and easy to use, making my work much more enjoyable.",
-      prof: "profile.png"
+      prof: "profile2.png"
     },
   ];
   
