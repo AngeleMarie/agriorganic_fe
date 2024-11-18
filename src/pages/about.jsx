@@ -1,7 +1,6 @@
 import React from "react";
 import { FaBullseye } from "react-icons/fa6";
-import Navbar from "../components/navbar";
-import Footer from "../components/Footer";
+
 import Management from "../components/Management";
 import Project from "../components/Project";
 
@@ -26,7 +25,6 @@ function About() {
 ];
   return (
     <div className="w-full relative h-full bg-white">
-      <Navbar />
       <div className="px-32 grid grid-cols-2">
         
         <img src="branch.png" className="absolute right-0" alt="branch" />
@@ -243,32 +241,41 @@ function About() {
         </div>
     
       <div className="bg-white h-full w-full py-20">
-        <div className="bg-[#0C2A19] mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-3">
+        <div className="bg-[#0C2A19] mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-4">
           <div className="text-white border-r-2 px-20 border-other-green">
-            <p className="font-bold text-xl py-2">Health and Well-being</p>
+            <p className="font-bold text-xl py-6 capitalize">Service to all</p>
             <p>+ Nutritional Quality</p>
             <p>+ Preventive Approach </p>
             <p>+ Mental Health Benefits</p>
           </div>
           <div className="text-white  border-r-2 px-20 py-6 border-other-green">
-            <p className="font-bold text-xl py-2">
-              Environmental Sustainability
+            <p className="font-bold text-xl py-4 capitalize ">
+            Absolute commitment to quality
             </p>
-            <p>+ Resource Conservation</p>
-            <p>+ Reduced Carbon Footprint</p>
-            <p>+ Ecosystem Health</p>
+            <p>+ Sustainable Resource Use</p>
+      <p>+ Lower Environmental Impact</p>
+      <p>+ Promoting Ecosystem Health</p>
+          </div>
+          <div className="text-white  border-r-2 px-20 py-6 border-other-green">
+            <p className="font-bold text-xl py-4 capitalize ">
+            Respect and devotion to Mother Nature
+            </p>
+            <p>+ Sustainable Resource Use</p>
+      <p>+ Lower Environmental Impact</p>
+      <p>+ Promoting Ecosystem Health</p>
           </div>
           <div className="text-white">
-            <p className="font-bold text-xl py-2">
-              Economic Viability and Equity
+            <p className="font-bold text-xl py-6 capitalize">
+            Total integrity
             </p>
-            <p>+ Fair Trade Practices </p>
-            <p>+ Local Economies</p>
-            <p>+ Accessibility and Affordability</p>
+            <p>+ Fair Trade Practices</p>
+      <p>+ Supporting Local Economies</p>
+      <p>+ Accessible and Affordable</p>
           </div>
+          
         </div>
       </div>
-      <Footer />
+    
     </div>
   );
 }

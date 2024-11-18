@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ShoppingCartIcon, HeartIcon, EyeIcon, StarIcon } from '@heroicons/react/20/solid';
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer';
 
 const MyCart = () => {
   const [products, setProducts] = useState([]);
@@ -43,7 +41,7 @@ const MyCart = () => {
 
   return (
     <>
-      <Navbar />
+
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">My Cart</h1>
@@ -87,7 +85,7 @@ const MyCart = () => {
           ))}
         </div>
       </div>
-      <Footer />
+    
     </>
   );
 };

@@ -6,22 +6,21 @@ import Goods from "../components/Goods"
 import HappyCustomers from '../components/Testimonials'
 import Newsletter from '../components/newsLetter'
 import Benefits from '../components/services'
-import Navbar from '../components/navbar'
-import Footer from '../components/Footer'
+
+import Servs from '../components/ourServices'
 
 function LandingPage() {
   return (
     <div>
-      <Navbar/>
-          <Home/>
+              <Home/>
       <Collaborators/>
+     {/* <Servs/> */}
       <Features/>
       <Goods/>
       <HappyCustomers/>
       <Benefits/>
       <Newsletter/>
-      <Footer/>
-    </div>
+        </div>
   )
 }
 

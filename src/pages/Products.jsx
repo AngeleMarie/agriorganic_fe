@@ -8,13 +8,12 @@ import EnhanceFertilityBanner from '../components/EnhanceFertilityBanner.jsx';
 import ProductShowcase from '../components/ProductShowcase.jsx';
 import NewArrivals from '../components/NewArrivals.jsx';
 import Benefits from '../components/services.jsx';
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer.jsx';
+
 
 export default function Products() {
   return (
     <div className="bg-white min-h-screen ">
-      <Navbar/>
+      
       <div className="container mx-auto px-4 py-8 ">
         <div className="flex flex-col md:flex-row my-24">
           <Sidebar />
@@ -34,7 +33,7 @@ export default function Products() {
         </div>
       </div>
       <Benefits/>
-      <Footer/>
+    
 
     </div>
   );

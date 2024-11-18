@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer.jsx';
+
 
 export default function Otp() {
   const [showPopup, setShowPopup] = useState(false); 
@@ -15,7 +14,7 @@ export default function Otp() {
 
   return (
     <div className="relative"> 
-<Navbar/>
+
       <div className={`flex p-32 ${showPopup ? 'blur-md' : ''} transition duration-300`}> 
         <div className="hidden lg:block lg:w-1/2">
           <img
@@ -79,7 +78,6 @@ export default function Otp() {
           </div>
         </div>
       )}
-      <Footer/>
     </div>
   );
 }

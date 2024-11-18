@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../components/navbar';
-import Footer from '../components/Footer';
 import Updates from '../components/Updates';
 import Promotions from '../components/Promotions';
 import CenteredTextNewsCarousel from '../components/carousel';
@@ -13,7 +11,7 @@ function NewsPage() {
 
   return (
     <>
-      <Navbar />
+  
       
     <div >
       <CenteredTextNewsCarousel/>
@@ -22,7 +20,6 @@ function NewsPage() {
 <Promotions/>
 <Benefits/>
     </div>
-    <Footer />
 
     </>
   );

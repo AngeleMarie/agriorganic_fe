@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { MdCancel } from 'react-icons/md';
 
-const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewProduct }) => {
+const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewProduct,handleImageChange }) => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -14,48 +14,64 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
       [name]: value,
     }));
   };
-
+ 
+  
   const handleSaveProduct = async () => {
     setError('');
     setSuccess('');
-
-    if (!newProduct.name || !newProduct.price || !newProduct.quantity) {
+  
+    if (!newProduct.name || !newProduct.price || !newProduct.picture || !newProduct.quantity) {
       setError('Please fill out all required fields.');
       return;
     }
-
+  
     const price = Number(newProduct.price);
     const quantity = Number(newProduct.quantity);
-
+  
     if (isNaN(price) || isNaN(quantity)) {
       setError('Price and quantity must be valid numbers.');
       return;
     }
-
+  
     try {
+      const formData = new FormData();
+      formData.append('name', newProduct.name);
+      formData.append('price', newProduct.price);
+      formData.append('quantity', newProduct.quantity);
+      formData.append('description', newProduct.description);
+      formData.append('usageGuide', newProduct.usageGuide);
+      formData.append('picture', newProduct.picture); // append the picture (file) here
+  
       const response = await fetch('http://localhost:7654/api/v1/admin/products/addProduct', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newProduct),
+        body: formData, // send FormData
       });
-
+  
       const data = await response.json();
       if (response.ok) {
         addNewProduct(data);
         setSuccess('Product added successfully!');
-        setNewProduct({ name: '', price: 0, quantity: 0, description: '', usageGuide: '' }); // Reset form fields
+        setNewProduct({
+          name: '',
+          picture: '',
+          price: 0,
+          quantity: 0,
+          description: '',
+          usageGuide: '',
+        }); 
         setTimeout(() => {
           setSuccess('');
           onClose();
-        }, 2000); 
+        }, 2000);
       } else {
         setError(data.error || 'Failed to add product.');
       }
     } catch (error) {
-      console.error('Error adding product:', error); 
+      console.error('Error adding product:', error);
       setError('An error occurred while adding the product.');
     }
   };
+  
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
@@ -109,9 +125,8 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
           <input
             type="file"
             id="newProductImage"
-            name="imageUrl"
-            value={newProduct.imageUrl || ''}
-            onChange={handleNewProductChange}
+            name="picture"
+            onChange={handleImageChange}
             className="mt-1 border-b w-full outline-none text-other-green"
           />
         </div>

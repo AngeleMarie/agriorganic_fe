@@ -1,0 +1,13 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure it stays above other elements */
+  }
+  
+  /* Adjust padding for the main content to prevent overlap */
+  .pt-20 {
+    padding-top: 5rem; /* Adjust based on the height of your Navbar */
+  }
+  

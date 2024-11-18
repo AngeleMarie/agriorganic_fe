@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../components/navbar.jsx";
-import Footer from "../components/Footer.jsx";
+
 
 export default function Register() {
   const [formData, setFormData] = useState({
@@ -72,7 +71,7 @@ export default function Register() {
 
   return (
     <>
-      <Navbar />
+    
       <div className="flex p-32">
         <div className="hidden lg:block lg:w-1/2">
           <img
@@ -179,7 +178,7 @@ export default function Register() {
           )}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

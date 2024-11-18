@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer.jsx';
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -68,7 +67,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <Navbar />
+    
       <div className="flex p-32">
         <div className="hidden lg:block lg:w-1/2">
           <img src="login.png" alt="Agricultural Sprayer" className="rounded-lg shadow-2xl m-auto w-3/4" />
@@ -132,7 +131,7 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <Footer />
+
     </>
   );
 }

@@ -1,14 +1,12 @@
 import React from 'react'
 import { ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer.jsx';
+
 
 export default function ForgotPassword() {
   return (
     <>
-    <Navbar/>
-    <div className="flex p-32 ">
+      <div className="flex p-32 ">
         
       <div className="hidden lg:block lg:w-1/2">
         <img
@@ -60,7 +58,7 @@ export default function ForgotPassword() {
         </div>
       </div>
     </div>
-    <Footer/>
+  
     </>
   );
 

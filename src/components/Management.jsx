@@ -59,53 +59,33 @@ export default function TeamCarousel() {
           <span className="font-medium">Meet Our</span><br /> Department
         </p>
       </div>
-      <div className='flex w-full gap-x-32 '>
-        <div className="mt-4  relative flex-auto w-72 aspect-[3/2] rounded-lg overflow-hidden flex-shrink-0">
-          <img
-            src={teamMembers[currentIndex].image}
-            alt={teamMembers[currentIndex].name}
-            className="object-cover  flex-shrink rounded-lg h-full w-full"
-          />
-        </div>
-
-        <div className="grow relative">
-          <span className="text-other-green">
-            <RiDoubleQuotesL className="w-10 h-10" />
-          </span>
-
-          <p className="text-xl w-[100%] font-normal mb-6 p-4 text-justify   ">
-            {teamMembers[currentIndex].quote}
-          </p>
-
-          <span className="text-other-green absolute bottom-24 right-0 ml-3">
-            <RiDoubleQuotesR className="w-10 h-10" />
-          </span>
-          <div className="m-6 ">
-        <p className="font-semibold text-lg">{teamMembers[currentIndex].name}</p>
-        <p className="text-gray-600">{teamMembers[currentIndex].role}</p>
-      </div>
-        </div>
-<div className='flex-none w-18 my-32'>
-<IoIosArrowForward
-          className="cursor-pointer w-16 h-16 text-gray-400"
-          onClick={handleNextSlide}
-          aria-label="Next Slide"/>
-</div>
-      </div>
-
-         
-        <div className="flex justify-center items-center mx-auto space-x-2">
-          {teamMembers.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? 'bg-main-green' : 'bg-gray-300'
-              }`}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
+    
+    <div className="p-6 md:p-12 relative">
+     
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 cursor-pointer">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="relative mx-auto md:mx-8 lg:mx-16 my-8 md:my-8">
+            <img
+              src={member.image}
+              alt={member.name}
+              width={400} 
+              height={400} 
+              className="w-64 h-auto md:w-80 lg:w-96"
+              loading="lazy"
             />
-          ))}   
-        </div>
+            <div className="w-56 md:w-64 lg:w-72 h-auto p-4  text-center md:top-60 mt-4">
+              <p className="font-semibold text-base text-other-green md:text-lg font-poppins text-main-black capitalize">
+                {member.name}
+              </p>
+              <p className="text-black/50 font-poppins text-sm  md:text-sm capitalize">
+                {member.role}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   )
 }

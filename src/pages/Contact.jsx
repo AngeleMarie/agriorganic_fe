@@ -3,8 +3,7 @@ import axios from "axios";
 import { FaXTwitter } from "react-icons/fa6";
 import { LuLinkedin } from "react-icons/lu";
 import { Phone, Mail, MapPin, Facebook } from "lucide-react";
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/Footer.jsx';
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -48,7 +47,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <Navbar />
+    
       <div className="bg-white p-32">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold text-center mb-2 text-main-green">Contact Us</h1>
@@ -207,7 +206,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <Footer />
+  
     </>
   );
 }

@@ -19,18 +19,20 @@
   import Dashboard from './pages/dashboard'
   import AdminProductList from './pages/stock'
   import Transactions from './pages/Transactions'
+import Navbar from './components/navbar'
+import Footer from './components/Footer'
 
   function App() {
     const [currentUser, setCurrentUser] = useState(null);
 
     return (
       <>
-        <div className='fixed top-0 left-0 w-full text-other-green font-light py-1 text-center bg-white z-50 '>
-          Summer Sale For Eco-Friendly Biopesticides - OFF 50%!
-          <span className='underline underline-offset-2 font-medium px-2'>Shop Now</span>
-        </div>
+       
         <div className="pt-8"> 
           <Router>
+  
+            <Navbar/>
+
             <Routes>
               <Route path="/" element={<LandigPage />} />
               <Route path="/about" element={<About />} />
@@ -56,6 +58,7 @@
               <Route path="/stock" element={<AdminProductList />} />
               <Route path="/customers" element={<Transactions />} />
             </Routes>
+            <Footer/>
           </Router>
         </div>
       </>

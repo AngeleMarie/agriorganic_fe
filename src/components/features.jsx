@@ -39,7 +39,7 @@ export default function WhyAgriorganic() {
           </div>
 
           <div className="w-full md:w-1/2 lg:w-1/3 mb-8 md:mb-0 flex justify-center">
-            <img src="/plant.png?height=400&width=300" alt="Agriorganic Plant" className="mx-auto" />
+            <img src="/handie.png?height=400&width=300" alt="Agriorganic Plant" className="mx-auto" />
           </div>
 
           <div className="flex flex-col items-center w-full md:w-1/2 lg:w-1/3 mb-8 md:mb-0">

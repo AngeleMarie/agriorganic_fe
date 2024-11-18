@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { StarIcon, ShoppingCartIcon, HeartIcon, EyeIcon } from '@heroicons/react/20/solid';
-import Navbar from '../components/navbar';
-import Footer from '../components/Footer';
+
 
 const WishlistAndCategories = ({ user }) => {
   const [products, setProducts] = useState([]);
@@ -37,7 +36,7 @@ const WishlistAndCategories = ({ user }) => {
 
   return (
     <>
-      <Navbar />
+
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Wishlist</h1>
@@ -100,7 +99,7 @@ const WishlistAndCategories = ({ user }) => {
           </div>
         </div>
       </div>
-      <Footer />
+    
     </>
   );
 };
