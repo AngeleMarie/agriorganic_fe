@@ -15,7 +15,7 @@ import UpcomingPayments from '../components/UpcomingPayments';
 import LastOrder from '../components/LastOrder';
 export default function Dashboard() {
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex bg-other-green/5">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />

@@ -1,28 +1,8 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
+import Goods from "../components/Goods"
 
 
-
-  
-const Hero = () => {
-  return (
-    <section className="relative h-[500px] bg-black/80">
-      <img
-        src="/services.jpg?height=300&width=1200"
-        alt="Farmer in field"
-        width={1200}
-        height={300}
-        className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
-      />
-      <div className="relative container mx-32 px-4 h-full w-1/2 flex flex-col justify-center">
-        <h1 className="text-6xl font-bold text-other-green mb-4">Driving growth with expert organic solutions</h1>
-  <p className='text-white text-xl font-md'>Explore our tailored services for sustainable farming, including expert agronomist consultations, precision crop management, and innovative biopesticides. Discover how we can help you achieve healthier yields and a greener future today.</p>
-
-      </div>
-
-    </section>
-  );
-};
 
 // Blog Card Component
 const BlogCard = ({ img, date, comments, title, excerpt }) => {
@@ -51,33 +31,35 @@ const BlogCard = ({ img, date, comments, title, excerpt }) => {
 const BlogGrid = () => {
   const posts = [
     {
-      img: "/service4.png",
-      date: "20 Feb 2023",
-      comments: 0,
-      title: "Agroecological and climate-smart solution advocacy",
-      excerpt: "Advocating for agroecological practices and climate-smart solutions to support sustainable agriculture and combat climate change."
-    },
-    {
       img: "/service1.png?height=300&width=400",
       date: "18 Feb 2023",
       comments: 0,
       title: "Agricultural Research and Innovation",
-      excerpt: "Exploring innovative agricultural research methods to improve farming practices, boost productivity, and address food security challenges."
-    },
-    {
-      img: "/service.png?height=300&width=400",
-      date: "18 Feb 2023",
-      comments: 0,
-      title: "Farmers capacity Building and Advisory services",
-      excerpt: "Providing training and expert advisory services to empower farmers with the knowledge and tools needed for sustainable farming."
+
     },
     {
       img: "/service3.png?height=300&width=400",
       date: "16 Feb 2023",
       comments: 0,
       title: "Sustainable organic inputs production",
-      excerpt: "Focusing on the production of sustainable organic inputs to enhance soil health and promote eco-friendly farming practices."
-    }
+     
+    },
+    {
+      img: "/service4.png",
+      date: "20 Feb 2023",
+      comments: 0,
+      title: "Agroecological and climate-smart solution advocacy",
+   
+    },
+  
+    {
+      img: "/service.png?height=300&width=400",
+      date: "18 Feb 2023",
+      comments: 0,
+      title: "Farmers capacity Building and Advisory services",
+  
+    },
+   
   ];
 
 
@@ -98,7 +80,6 @@ const ourServices = () => {
   return (
     <div className="min-h-screen mt-24 bg-gray-50">
     
-      <Hero />
       <div className='mt-12'>
       <p className='uppercase  text-center text-sm  text-other-green'>CULTIVATING EXCELLENCE</p>
         <p className="text-4xl font-bold text-center mb-6 text-main-green">Our Services</p>
@@ -108,6 +89,8 @@ const ourServices = () => {
       </div>
       
       <BlogGrid />
+    <Goods/>
+
     </div>
   );
 };

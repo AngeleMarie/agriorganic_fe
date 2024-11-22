@@ -119,7 +119,7 @@ export default function AdminProductList() {
   
 
   return (
-    <div className="flex h-screen bg-gray-100/70">
+    <div className="flex h-screen  bg-other-green/5">
       <Sidebar />
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />

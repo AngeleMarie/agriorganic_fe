@@ -74,11 +74,11 @@ export default function TeamCarousel() {
               className="w-64 h-auto md:w-80 lg:w-96"
               loading="lazy"
             />
-            <div className="w-56 md:w-64 lg:w-72 h-auto p-4  text-center md:top-60 mt-4">
-              <p className="font-semibold text-base text-other-green md:text-lg font-poppins text-main-black capitalize">
+            <div className="  h-auto md:top-60 mt-4">
+              <p className="font-semibold text-base text-other-green md:text-2xl font-poppins text-main-black capitalize">
                 {member.name}
               </p>
-              <p className="text-black/50 font-poppins text-sm  md:text-sm capitalize">
+              <p className="text-black/50 font-poppins text-sm  md:text-lg capitalize">
                 {member.role}
               </p>
             </div>
