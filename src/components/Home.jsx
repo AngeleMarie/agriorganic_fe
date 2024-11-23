@@ -3,21 +3,17 @@ import React, { useState, useEffect } from "react";
 function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide: Changes slide every 8 seconds (8000 ms)
+  // Auto-slide: Changes slide every 4 seconds (4000 ms)
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 8000); // Change every 8 seconds
+    }, 4000);
 
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    return () => clearInterval(interval);
   }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % newsItems.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + newsItems.length) % newsItems.length);
   };
 
   const newsItems = [
@@ -40,26 +36,26 @@ function Home() {
   ];
 
   return (
-    <div className="relative h-1/2 pt-12 bg-main-green/70">
-      <div className="w-full h-[800px]"> {/* Full screen carousel */}
-        <div className="relative w-full h-[800px]">
-          <div className="relative w-full h-[800px] overflow-hidden">
-            <div className="absolute inset-0 transition-opacity duration-700 ease-in-out">
-              <img
-                src={newsItems[currentIndex].imageUrl}
-                alt={`Slide ${currentIndex + 1}`}
-                className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
-              />
-              <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-700 ease-in-out"></div>
+    <div className="relative mt-24 h-[60vh] bg-main-green/70">
+      {/* Carousel Container */}
+      <div className="relative w-full h-full">
+        {/* Image Slide */}
+        <div className="absolute inset-0 transition-opacity duration-700 ease-in-out">
+          <img
+            src={newsItems[currentIndex].imageUrl}
+            alt={`Slide ${currentIndex + 1}`}
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-              {/* Overlay text */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center ">
-                <p className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg w-1/2 text-white capitalize text-center">
-                  Farming for 
-                  <span className="text-other-green"> Better Future </span> 
-                </p>
-              </div>
-            </div>
+          {/* Overlay Text */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+            <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+              Farming for
+              <span className="text-other-green"> Better Future</span>
+            </p>
+            
           </div>
         </div>
       </div>

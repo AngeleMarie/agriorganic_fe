@@ -1,5 +1,4 @@
-import { Clock, ArrowRight } from "lucide-react"
-
+import { Clock, ArrowRight } from "lucide-react";
 
 const newsItems = [
   {
@@ -28,7 +27,7 @@ const newsItems = [
   },
   {
     id: 4,
-    title: " AGRIORGANIC collaborate with ACORD Rwanda",
+    title: "AGRIORGANIC collaborates with ACORD Rwanda",
     excerpt: "ACORD Rwanda in partnership with AGRIORGANIC aim to support research and adoption of eco-friendly farming techniques.",
     category: "Partnership",
     date: "2024-10-08",
@@ -36,36 +35,32 @@ const newsItems = [
   }
 ];
 
-
 export default function Updates() {
   return (
     <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
-      <img src="ellipse.svg" alt="ellipse" className="absolute left-0" />
+      <img src="ellipse.svg" alt="ellipse" className="absolute left-0 hidden md:block" />
       <img src="smallie.svg" alt="ellipse" className="absolute right-0 bottom-0" />
 
       <div className="max-w-7xl mx-auto">
-      <p className='uppercase font-semibold text-center text-md text-other-green  '>TRENDING</p>
+        <p className="uppercase font-semibold text-center text-md text-other-green">TRENDING</p>
         <p className="text-4xl font-bold text-center mb-4 text-main-green">Latest News</p>
-        <p className='text-blackie text-center p-3'>Stay informed with the latest updates and trends in agriculture, sustainability, and innovation. Our trending news highlights crucial developments and insights that impact the Agriorganic community and beyond.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  my-4 gap-8">
-          {newsItems.map((item, index) => (
+        <p className="text-blackie text-center p-3">Stay informed with the latest updates and trends in agriculture, sustainability, and innovation. Our trending news highlights crucial developments and insights that impact the Agriorganic community and beyond.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-8">
+          {newsItems.map((item) => (
             <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative h-48">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-          
-                  height={200}
-                  
-                
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute top-0 left-0 bg-main-green/70 text-white px-3 py-1 m-2 rounded-full text-sm font-semibold">
                   {item.category}
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-other-green my-3  line-clamp-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4   text-justify line-clamp-3">{item.excerpt}</p>
+                <h3 className="text-xl font-semibold text-other-green my-3 line-clamp-2">{item.title}</h3>
+                <p className="text-gray-600 mb-4 text-justify line-clamp-3">{item.excerpt}</p>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center text-sm text-main-green">
                     <Clock className="w-4 h-4 mr-1" />
@@ -82,5 +77,5 @@ export default function Updates() {
         </div>
       </div>
     </section>
-  )
+  );
 }
