@@ -78,19 +78,19 @@ function About() {
         <h1 className="text-4xl text-other-green mx-32">Our Success Numbers</h1>
         <div className="bg-[#0C2A19] mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-3">
           <div className="text-white border-r-2 px-20 border-other-green">
-            <img src="cube.png" alt="cube" className="ml-10" />
-            <p className="font-bold text-4xl">6,500,00</p>
-            <p>Total products sold</p>
+            <img src="cube.png" alt="cube" className="ml-16" />
+            <p className="font-bold text-4xl text-center">10 +</p>
+            <p>Total products researched</p>
           </div>
           <div className="text-white  border-r-2 px-20  border-other-green">
             <img src="stars.png" alt="stars" className="" />
-            <p className="font-bold text-4xl">6,500,00</p>
-            <p>Reviews On Products</p>
+            <p className="font-bold text-4xl text-center">5+</p>
+            <p>Services Provided</p>
           </div>
           <div className="text-white">
-            <img src="users.png" alt="users" className="ml-10" />
-            <p className="font-bold text-4xl">6,500,00</p>
-            <p>Our Total Customers</p>
+            <img src="users.png" alt="users" className="ml-12" />
+            <p className="font-bold text-4xl text-center">100+</p>
+            <p>Reviews on Our Offerings</p>
           </div>
         </div>
       </div>
@@ -127,7 +127,7 @@ function About() {
         />
          <div className="bg-white pb-20">
        
-       <div className="mx-32">
+       <div className="mx-32 relative">
          <div className="py-24">
            <p className="text-2xl font-bold p-2 text-main-green border-t-8 border-main-green w-[10%]">
              <span className="text-other-green">Our</span>
@@ -141,17 +141,13 @@ function About() {
            <div className="flex gap-2">
              <FaBullseye className=" w-8 h-8  text-other-green  bg-[#266937] bg-opacity-30 p-1 rounded-md " />
              <p className="text-other-green font-bold pb-2 text-center">
-               Promotion of Organic Farming and Agroecological Practices
+             To promote organic farming and agroecological practices in general
              </p>
            </div>
 
-           <p className="text-justify">
-             By focusing on natural, sustainable methods that protect the
-             environment and improve soil health and crop productivity. The
-             company believes in farming that works in harmony with nature to
-             preserve ecosystems for future generations.
-           </p>
+           
          </div>
+         
          <img
            src="crop.png"
            alt="crop"
@@ -161,35 +157,28 @@ function About() {
            <div className="flex gap-2">
              <FaBullseye className=" w-8 h-8 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
              <h1 className="text-other-green font-bold text-center">
-               Advocacy for Sustainable Food Systems
+             To advocate for sustainable food systems
              </h1>
            </div>
 
-           <p className="text-justify">
-             Throughout promoting locally sourced, organic produce that
-             supports consumer health and environmental protection. The company
-             encourages waste reduction, biodiversity preservation, and
-             minimizing harmful chemicals, aiming to build a resilient and
-             sustainable agricultural economy for the benefit of all.
-           </p>
          </div>
        </div>
-       <div className="relative left-[500px] mt-16 bg-[#D2FFDE] h-[30%] w-[23%] rounded-xl p-6">
+       <div className="relative left-[300px] mt-16 bg-[#D2FFDE]  w-[23%] rounded-xl p-6">
          <div className="flex gap-2">
            <FaBullseye className=" w-8 h-8 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
            <h1 className="text-other-green font-bold text-center">
-             Fostering Research, Innovation, and Farmer Education
+           To foster research and innovation
            </h1>
          </div>
-
-         <p className="text-justify">
-           We focus on research and innovation in sustainable agriculture,
-           seeking better organic farming and pest management techniques. They
-           prioritize educating and empowering local farmers, equipping them
-           with the tools and knowledge to adopt sustainable practices, improve
-           yields, and protect the environment.
-         </p>
-       </div>
+         </div>
+         <div className="relative left-2/3  bg-[#D2FFDE] h-[30%]  w-[23%] rounded-xl p-6">
+         <div className="flex gap-2 ">
+           <FaBullseye className=" w-8 h-8 text-other-green bg-[#266937] bg-opacity-30 p-1 rounded-md " />
+           <h1 className="text-other-green font-bold text-center">
+           To educate and empower local farmers
+           </h1>
+         </div>
+       </div>      
      </div>
      <div className="mx-32">
           <div className="pt-12">
@@ -205,34 +194,26 @@ function About() {
       <div className="bg-white h-full w-full py-20">
         <div className="bg-[#0C2A19] mt-4 py-10 rounded-xl mx-32 justify-items-center justify-center items-center grid grid-cols-4">
           <div className="text-white border-r-2 px-20 border-other-green">
-            <p className="font-bold text-xl py-6 capitalize">Service to all</p>
-            <p>+ Nutritional Quality</p>
-            <p>+ Preventive Approach </p>
-            <p>+ Mental Health Benefits</p>
+            <p className="font-bold text-xl py-6 capitalize">+ Service to all</p>
+           
           </div>
           <div className="text-white  border-r-2 px-20 py-6 border-other-green">
-            <p className="font-bold text-xl py-4 capitalize ">
-            Absolute commitment to quality
+            <p className="font-bold text-xl py-4 capitalize text-center">
+            + Total integrity
+            
             </p>
-            <p>+ Sustainable Resource Use</p>
-      <p>+ Lower Environmental Impact</p>
-      <p>+ Promoting Ecosystem Health</p>
+           
           </div>
-          <div className="text-white  border-r-2 px-20 py-6 border-other-green">
+          <div className="text-white  border-r-2 px-8 py-6 border-other-green">
             <p className="font-bold text-xl py-4 capitalize ">
-            Respect and devotion to Mother Nature
+          +  Absolute commitment to quality
             </p>
-            <p>+ Sustainable Resource Use</p>
-      <p>+ Lower Environmental Impact</p>
-      <p>+ Promoting Ecosystem Health</p>
           </div>
           <div className="text-white">
-            <p className="font-bold text-xl py-6 capitalize">
-            Total integrity
+            <p className="font-bold text-xl py-6 px-8 capitalize">
+           + Respect and devotion to Mother Nature
+
             </p>
-            <p>+ Fair Trade Practices</p>
-      <p>+ Supporting Local Economies</p>
-      <p>+ Accessible and Affordable</p>
           </div>
           
         </div>

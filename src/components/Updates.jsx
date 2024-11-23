@@ -4,37 +4,38 @@ import { Clock, ArrowRight } from "lucide-react"
 const newsItems = [
   {
     id: 1,
-    title: "AI Breakthrough: New Model Understands Context Better Than Ever",
-    excerpt: "Researchers have developed an AI model that comprehends context with unprecedented accuracy, potentially revolutionizing natural language processing.",
-    category: "Technology",
+    title: "Innovative Research in Vermicomposting Boosts Soil Fertility",
+    excerpt: "AGRIORGANIC researchers unveil breakthroughs in vermicomposting techniques, enhancing soil health and productivity for sustainable farming.",
+    category: "Services",
     date: "2023-05-15",
-    imageUrl: "spray.jpg"
+    imageUrl: "service.png"
   },
   {
     id: 2,
-    title: "Global Initiative Launched to Clean Up Ocean Plastic",
-    excerpt: "A coalition of countries and organizations has announced a massive effort to remove plastic waste from the world's oceans, targeting completion by 2030.",
-    category: "Environment",
+    title: "Organic Products Revolutionize Pest Control for Farmers",
+    excerpt: "New biopesticide products developed by AGRIORGANIC are empowering farmers to combat pests naturally while preserving biodiversity.",
+    category: "Products",
     date: "2023-05-14",
-    imageUrl: "env.jpg?height=300width=300"
+    imageUrl: "env.jpg?height=100width=300"
   },
   {
     id: 3,
-    title: "New Study Reveals Benefits of 4-Day Work Week",
-    excerpt: "A large-scale study has shown that implementing a 4-day work week can lead to increased productivity and employee satisfaction without negatively impacting business outcomes.",
-    category: "Business",
+    title: "Educational Workshops on Organic Farming Techniques",
+    excerpt: "AGRIORGANIC hosts workshops to educate farmers about the benefits of vermicomposting and biopesticides, promoting sustainable agricultural practices.",
+    category: "Education",
     date: "2023-05-13",
-    imageUrl: "business.jpg"
+    imageUrl: "home3.jpg"
   },
   {
     id: 4,
-    title: "Government Initiatives to Support Organic Farmers in Rwanda",
-    excerpt: "The Rwandan government has launched new programs aimed at supporting organic farmers with subsidies and training, promoting sustainable agricultural practices across the nation.",
-    category: "Policy",
+    title: " AGRIORGANIC collaborate with ACORD Rwanda",
+    excerpt: "ACORD Rwanda in partnership with AGRIORGANIC aim to support research and adoption of eco-friendly farming techniques.",
+    category: "Partnership",
     date: "2024-10-08",
-    imageUrl: "politic.jpg"
+    imageUrl: "home2.jpg"
   }
-]
+];
+
 
 export default function Updates() {
   return (
@@ -53,9 +54,10 @@ export default function Updates() {
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  layout="fill"
+          
+                  height={200}
                   
-                  objectFit="cover"
+                
                 />
                 <div className="absolute top-0 left-0 bg-main-green/70 text-white px-3 py-1 m-2 rounded-full text-sm font-semibold">
                   {item.category}

@@ -22,13 +22,13 @@ const Promotions = () => {
         {/* Text Content */}
         <div className="inset-0 flex flex-col justify-center space-y-4 px-12 my-12">
           <h2 className="text-4xl font-bold text-[#266937]">
-            New Product On The Market !!!
+            New Product In Research!!!
           </h2>
           <p className="text-base md:text-lg text-white opacity-90 max-w-lg">
           Join the countless satisfied customers who trust us for their agricultural needs! Discover our new product that have won the hearts of our customers.
           </p>
           <button className="bg-[#266937] cursor-pointer hover:bg-green-600 text-white font-bold py-2 w-1/2 rounded transition duration-300">
-            Buy Now
+            Discover More
           </button>
         </div>
 
@@ -81,7 +81,7 @@ const Promotions = () => {
               alignmentBaseline="central"
               fill="currentColor"
             >
-              remaining in store ...
+              samples in lab ...
             </text>
           </svg>
         </div>

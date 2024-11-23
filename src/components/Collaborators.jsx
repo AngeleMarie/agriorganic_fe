@@ -5,7 +5,7 @@ export default function Collaborators() {
   
   return (
     <div className="py-10 bg-white relative">
-      <img src="side.svg" className='absolute h-auto w-24 my-56' alt="side" />
+    
       <div className="container mx-auto border-other-green/5 border-y-2 py-4">
     
         <p className="text-4xl font-bold text-center mb-6 text-main-green">Trusted Partners</p>

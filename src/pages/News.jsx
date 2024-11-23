@@ -18,7 +18,7 @@ function NewsPage() {
 
       <Updates />
 <Promotions/>
-<Benefits/>
+
     </div>
 
     </>

@@ -25,12 +25,12 @@ export default function Goods() {
                   
                     </div>
                     <div>
-                    <p className='text-white text-lg font-semibold'>{product.price} FRW</p>
                     <div className="flex">
                       {[...Array(product.rating)].map((_, i) => (
                         <span key={i} className="text-yellow-400">★</span>
                       ))}
                     </div>
+                
                     </div>
                   </div>
                   

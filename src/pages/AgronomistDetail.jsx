@@ -64,7 +64,7 @@ const BlogGrid = () => {
 
 
   return (
-    <section className="container mx-56 px-4 py-16">
+    <section className="container mx-56 px-4 py-16 ">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {posts.map((post, index) => (
           <BlogCard key={index} {...post} />
@@ -78,10 +78,8 @@ const BlogGrid = () => {
 // Main Component
 const ourServices = () => {
   return (
-    <div className="min-h-screen mt-24 bg-gray-50">
-    
+    <div className="min-h-screen mt-32 bg-gray-10">
       <div className='mt-12'>
-      <p className='uppercase  text-center text-sm  text-other-green'>CULTIVATING EXCELLENCE</p>
         <p className="text-4xl font-bold text-center mb-6 text-main-green">Our Services</p>
         <p className='text-main-green text-lg text-center w-2/3 mx-auto py-2'>
         We provide innovative agricultural solutions tailored to empower farmers and agribusinesses. From cutting-edge technology to expert support, we are dedicated to nurturing growth and sustainability.

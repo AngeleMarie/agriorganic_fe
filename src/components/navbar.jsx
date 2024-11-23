@@ -22,7 +22,7 @@ const Navbar = () => {
     },
     {
       icon: <GrCubes className="h-6 w-6 mr-2" />,
-      name: "Our Services",
+      name: "Our Offerings",
       path: "/services",
     },
     {
@@ -38,14 +38,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className=" navbar bg-main-green text-white py-4  flex justify-between items-center w-full z-50 px-12">
+    <nav className=" navbar bg-main-green text-white py-4  flex justify-between items-center w-full z-50 px-12 ">
       {/* Logo Section */}
       <div className="flex items-center">
         <img src="/agriorganic.png" alt="Logo" className="h-16 ml-24" />
       </div>
 
       {/* Navbar Links */}
-      <div className="flex items-center space-x-8">
+      <div className="flex items-center space-x-8 mr-12">
         {navLinks.map((link, index) => (
           <NavLink
             key={index}
