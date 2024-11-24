@@ -26,7 +26,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="bg-blackie text-white py-10 overflow-x-hidden">
+        <footer className="bg-blackie text-white py-10 overflow-x-hidden md:px-48 ">
             <div className="container ">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-5 gap-x-24  gap-y-12 px-12 md:px-12">
                     {footerSections.map((section, index) => (

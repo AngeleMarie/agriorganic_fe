@@ -42,7 +42,7 @@ export default function CenteredTextNewsCarousel() {
     <div className="w-full h-[800px] md:h-[600px]">
       <div className="relative w-full h-full">
         <div className="relative w-full h-full overflow-hidden shadow-lg">
-          <div className="absolute inset-0 transition-opacity duration-700 ease-in-out">
+          <div className="absolute inset-0 transition-opacity duration-700 ease-in-out ">
             <img
               src={newsItems[currentIndex].imageUrl}
               alt={newsItems[currentIndex].headline}
@@ -85,7 +85,7 @@ export default function CenteredTextNewsCarousel() {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-3 w-3 rounded-full transition-colors ${index === currentIndex ? 'bg-white/70' : 'bg-white/40 hover:bg-white/60'}`}
+            className={`h-3 w-3 rounded-full transition-colors  ${index === currentIndex ? 'bg-white/70' : 'bg-white/40 hover:bg-white/60'}`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

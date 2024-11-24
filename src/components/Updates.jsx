@@ -19,7 +19,7 @@ const newsItems = [
   },
   {
     id: 3,
-    title: "Educational Workshops on Organic Farming Techniques",
+    title: "Educational workshop about Biopesticides",
     excerpt: "AGRIORGANIC hosts workshops to educate farmers about the benefits of vermicomposting and biopesticides, promoting sustainable agricultural practices.",
     category: "Education",
     date: "2023-05-13",
