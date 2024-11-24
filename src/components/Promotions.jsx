@@ -3,7 +3,7 @@ import React from "react";
 
 const Promotions = () => {
   return (
-    <div className="relative w-full h-[600px] bg-main-green p-32">
+    <div className="relative w-full h-1/3 bg-main-green p-8 md:p-32">
       
       {/* Background Image */}
       <img
@@ -13,27 +13,27 @@ const Promotions = () => {
         loading="lazy"
       />
 
-      <div className="flex gap-x-24">
-        {/* Product Image */}
-        <div className="z-10">
+      <div className="flex flex-col md:flex-row gap-y-8 md:gap-x-24">
+        {/* Product Image (hidden on small and medium screens) */}
+        <div className="z-10 hidden md:block">
           <img src="plantie.png" alt="plant" className="" />
         </div>
 
         {/* Text Content */}
-        <div className="inset-0 flex flex-col justify-center space-y-4 px-12 my-12">
-          <h2 className="text-4xl font-bold text-[#266937]">
+        <div className="z-10 flex flex-col justify-center space-y-4 w-full md:w-1/2 px-8 md:px-12 my-12 ">
+          <p className="text-4xl font-bold text-[#266937] text-center md:text-left">
             New Product In Research!!!
-          </h2>
-          <p className="text-base md:text-lg text-white opacity-90 max-w-lg">
-          Join the countless satisfied customers who trust us for their agricultural needs! Discover our new product that have won the hearts of our customers.
           </p>
-          <button className="bg-[#266937] cursor-pointer hover:bg-green-600 text-white font-bold py-2 w-1/2 rounded transition duration-300">
+          <p className="text-base md:text-lg text-white opacity-90 text-center md:text-left max-w-full">
+            Join the countless satisfied customers who trust us for their agricultural needs! Discover our new product that has won the hearts of our customers.
+          </p>
+          <button className="bg-[#266937] cursor-pointer hover:bg-green-600 text-white font-bold py-2 w-full md:w-1/2 rounded transition duration-300">
             Discover More
           </button>
         </div>
 
-        {/* Progress Circle */}
-        <div className="absolute right-72 top-1/3 w-64 h-64">
+        {/* Progress Circle (hidden on small and medium screens) */}
+        <div className="absolute right-72 top-1/3 w-64 h-64 hidden md:block">
           <svg className="w-full h-full" viewBox="0 0 100 100">
             <circle
               className="text-green-800 stroke-current"
@@ -74,7 +74,7 @@ const Promotions = () => {
             <text
               x="50"
               y="65"
-              className="text-white "
+              className="text-white"
               fontFamily="Arial"
               fontSize="5"
               textAnchor="middle"

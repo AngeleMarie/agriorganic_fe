@@ -13,20 +13,15 @@ export default function Collaborators() {
         </p>
         {/* Partner Logos */}
         <div className=" justify-center items-center">
-          {partners.map((partner, index) => (
-            <div
-              key={index}
-              className="w-full sm:w-1/2 md:w-1/3  lg:w-1/4 px-4 items-center justify-center"
-            >
+          
               <div className="p-4">
                 <img
                   src="/partener.png?height=50&width=100"
-                  alt={partner}
-                  className="w-3/4 sm:w-full object-contain"
+                  alt="partner"
+                  className="h-48 mx-auto"
+              
                 />
-              </div>
-            </div>
-          ))}
+              </div>    
         </div>
       </div>
     </div>

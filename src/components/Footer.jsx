@@ -28,16 +28,16 @@ export default function Footer() {
     return (
         <footer className="bg-blackie text-white py-10">
             <div className="container mx-auto">
-                <div className="flex justify-between">
+                <div className="grid grid-cols-2 px-12 md:grid-cols-5 gap-12">
                     {footerSections.map((section, index) => (
-                        <div key={index}>
+                        <div key={index} className="flex-1 min-w-[220px]">
                             {index === 0 && (
-                                <div>
-                                    <img src="/agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32" />
-                                    <p className="text-sm mb-4">AGRIORGANIC Farm Ltd - Est 2024</p>
-                                    <p className="text-sm mb-4">Gatagara, Musanze, Rwanda</p>
+                                <div className="mb-8 mr-12">
+                                    <img src="/agriorganic.png" alt="Agriorganic Logo" className="mb-4 h-24 w-32  md:mx-0" />
+                                    <p className="text-sm mb-4 text-left">AGRIORGANIC Farm Ltd - Est 2024</p>
+                                    <p className="text-sm mb-4 text-left">Gatagara, Musanze, Rwanda</p>
                                     {/* Social media icons */}
-                                    <div className="flex space-x-4 mt-4">
+                                    <div className="flex  space-x-4 mt-4 md:justify-start">
                                         <div 
                                             className="bg-[#266937] rounded-full p-2 shadow-md hover:bg-white hover:text-[#266937]" 
                                             onClick={() => window.open('https://www.linkedin.com/company/agriorganic-farm-ltd/posts/?feedView=all', '_blank')}
@@ -59,6 +59,8 @@ export default function Footer() {
                                     </div>
                                 </div>
                             )}
+                            <div className="">
+                            <div className="">
                             <h3 className="font-semibold mb-4">{section.title}</h3>
                             <ul>
                                 {section.links.map((link, linkIndex) => (
@@ -67,10 +69,15 @@ export default function Footer() {
                                     </li>
                                 ))}
                             </ul>
+                            </div>
+                            </div>
+                         
+
                         </div>
                     ))}
                 </div>
-                <div className="mt-8 pt-8 text-center">
+                <div className="w-5/6 my-4 border-t-2 border-white/20 h-1 mx-auto"></div>
+                <div className=" pt-8 text-center">
                     <p><span>Copyright</span>&copy; 2024 Agriorganic. All rights reserved.</p>
                 </div>
             </div>
