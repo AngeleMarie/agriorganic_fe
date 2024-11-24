@@ -11,7 +11,7 @@ import CurrentPro from "../components/CurrentPro";
 function About() {
   
   return (
-    <div className="w-full relative h-full bg-white">
+    <>
       <History/>
       <Numbers/>
      <Vision/>
@@ -22,9 +22,8 @@ function About() {
       <div className="my-24 mx-12 md:mx-32">
           <Management />
         </div>
-    
-    
-    </div>
+       
+    </>
   );
 }
 

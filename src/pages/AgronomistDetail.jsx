@@ -78,7 +78,7 @@ const BlogGrid = () => {
 // Main Component
 const ourServices = () => {
   return (
-    <div className="min-h-screen mt-32 bg-gray-10">
+    <div className="min-h-screen  bg-gray-10">
       <div className='mt-12'>
         <p className="text-4xl font-bold text-center mb-6 text-main-green">Our Services</p>
         <p className='text-main-green text-lg text-justify md:text-center w-2/3 mx-auto py-2'>

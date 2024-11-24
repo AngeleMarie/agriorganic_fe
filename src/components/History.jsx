@@ -2,7 +2,7 @@ import React from "react";
 
 function History() {
   return (
-    <div className="w-full relative h-full bg-white pt-12">
+    <div className="w-full relative h-full bg-white">
       <div className="px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Branch Image */}
         <img
@@ -29,7 +29,7 @@ function History() {
           <h2 className="text-2xl md:text-5xl font-semibold text-other-green mb-4">
             History & Background
           </h2>
-          <p className="text-lg md:text-3xl  font-normal my-12">
+          <p className="text-lg md:text-3xl  font-normal text-blackie my-12">
             AGRIORGANIC FARM Ltd was founded in July 2023 by students from the
             University of Rwanda's College of Agriculture, Food Science, and
             Forestry (CAFF). Their mission is to address challenges in the
@@ -41,7 +41,7 @@ function History() {
             chemical fertilizers, which harm soil health and reduce
             productivity.
           </p>
-          <p className="text-lg md:text-3xl font-normal my-6 ">
+          <p className="text-lg md:text-3xl font-normal  text-blackie my-6 ">
             We seek to promote organic farming practices that enhance soil
             fertility and boost crop yields. They also aim to address health
             risks linked to chemical fertilizers, including rising cancer rates

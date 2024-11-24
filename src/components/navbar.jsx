@@ -53,7 +53,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-main-green px-2 md:px-24 py-4">
+    <nav className="navbar w-full bg-main-green px-8 md:px-24 py-4">
       <div className="flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center">
@@ -73,10 +73,10 @@ function Navbar() {
               key={index}
               to={link.path}
               className={({ isActive }) =>
-                `flex items-center text-xl font-normal transition-colors ${
-                  isActive
-                    ? "font-semibold text-other-green px-2 py-1 "
-                    : "text-white font-medium"
+                `flex items-center text-xl font-normal transition-colors 
+                ${isActive
+                  ? "font-semibold bg-other-green text-white md:bg-other-green md:text-white lg:bg-transparent lg:text-other-green lg:font-semibold"
+                  : "text-white font-medium md:bg-other-green md:text-white md:px-2 md:py-1 lg:bg-transparent lg:text-white"
                 }`
               }
             >
@@ -87,10 +87,7 @@ function Navbar() {
 
         {/* Mobile Navigation Button (Top Right) */}
         <div className="lg:hidden px-4">
-          <button
-            onClick={toggleMenu}
-            className="border-white text-white"
-          >
+          <button onClick={toggleMenu} className="border-white text-white">
             <Menu className="h-6 w-6" />
             <span className="sr-only">Toggle navigation menu</span>
           </button>
@@ -104,24 +101,25 @@ function Navbar() {
             id="sidebar"
             className="absolute top-0 right-0 w-[250px] h-full bg-main-green text-white shadow-lg p-4"
           >
-            <nav className="flex flex-col space-y-4 my-8">
+            <nav className="flex flex-col space-y-4 my-12">
               {navLinks.map((link, index) => (
-                <Link
+                <NavLink
                   key={index}
                   to={link.path}
                   onClick={toggleMenu}
-                  className="flex items-center space-x-2 rounded-lg px-2 py-8 transition-colors hover:bg-main-green/50"
+                  className={({ isActive }) =>
+                    `flex items-center space-x-2 rounded-lg px-2 py-4 transition-colors 
+                    ${isActive ? "bg-other-green font-semibold text-white" : "text-white hover:bg-green-50"}`
+                  }
                 >
                   {link.icon}
                   <span>{link.name}</span>
-                </Link>
+                </NavLink>
               ))}
             </nav>
           </div>
         </div>
       )}
-
- 
     </nav>
   );
 }

@@ -36,7 +36,7 @@ function Home() {
   ];
 
   return (
-    <div className="relative mt-24 h-[60vh] bg-main-green/70">
+    <div className="relative h-[60vh] bg-main-green/70">
       {/* Carousel Container */}
       <div className="relative w-full h-full">
         {/* Image Slide */}
