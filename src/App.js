@@ -20,6 +20,8 @@ import AdminProductList from './pages/stock';
 import Transactions from './pages/Transactions';
 import Navbar from './components/navbar';
 import Footer from './components/Footer';
+import AddNews from './pages/AddNews';
+import Update from './pages/adminNews';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -62,7 +64,10 @@ function App() {
           <Route path="/wishlist" element={<WishlistAndCategories user={currentUser} />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/stock" element={<AdminProductList />} />
+          <Route path="/adminNews" element={< Update/>} />
           <Route path="/customers" element={<Transactions />} />
+          <Route path="/addNews" element={<AddNews />} />
+
         </Routes>
       </Layout>
     </Router>

@@ -16,7 +16,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-        const response = await fetch('http://localhost:7654/api/v1/users/auth/login', {
+        const response = await fetch('https://agriorgainc-be.onrender.com/api/v1/admin/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password, role }),
@@ -37,7 +37,7 @@ export default function LoginPage() {
         const data = await response.json();
         localStorage.setItem('token', data.token);
         localStorage.setItem('tokenExpiry', Date.now() + 60 * 60 * 1000);
-        navigate(`/wishlist`);
+        navigate(`/addNews`);
     } catch (err) {
         console.error('Login error:', err);
         setError('An error occurred. Please try again.');
