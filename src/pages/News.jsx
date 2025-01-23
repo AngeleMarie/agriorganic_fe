@@ -12,7 +12,6 @@ function NewsPage() {
   return (
     <>
   
-      
     <div >
       <CenteredTextNewsCarousel/>
 

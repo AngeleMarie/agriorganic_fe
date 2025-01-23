@@ -27,7 +27,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   // Define the pages where Navbar and Footer should not appear
-  const excludedPaths = ['/dashboard','/stock','/customers'];
+  const excludedPaths = ['/dashboard','/stock','/adminNews'];
 
   // Custom component to manage conditional rendering
   const Layout = ({ children }) => {

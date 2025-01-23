@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Clock, Trash2, PlusCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
+import Sidebar from '../components/adminSide.jsx';
+import TopBar from '../components/topBar.jsx';
 
 export default function Update() {
   const [newsItems, setNewsItems] = useState([]);
@@ -54,70 +56,22 @@ export default function Update() {
     }
   };
 
-  const handleLogout = () => {
-    // Show the logout confirmation modal
-    setShowLogoutModal(true);
-  };
-
-  const handleConfirmLogout = () => {
-    alert("Logging out...");
-    window.location.href = "/login"; // Redirect to the login page
-  };
-
-  const handleCancelLogout = () => {
-    // Close the logout confirmation modal
-    setShowLogoutModal(false);
-  };
 
   return (
-    <section className="bg-gray-50  ">
-      {/* Admin Panel Header */}
-      <div className="flex justify-between items-center bg-gray-800 text-white p-4">
-        <h1 className="text-xl font-bold">Admin Panel</h1>
-        <div className="flex gap-4">
-          <button
+      <div className="flex bg-other-green/5">
+      <Sidebar />
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <TopBar />
+        <main className='flex-1 overflow-x-hidden overflow-y-auto p-6'>
+        <div className="max-w-7xl mx-auto">
+        <div className="flex justify-end mb-4">
+        
+        <button
             onClick={() => navigate('/addNews')}
-            className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg"
+            className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-white"
           >
             Add News
           </button>
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg"
-          >
-            Logout
-          </button>
-        </div>
-      </div>
-
-      {/* Logout Confirmation Modal */}
-      {showLogoutModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
-            <h3 className="text-lg font-semibold mb-4">Are you sure you want to log out?</h3>
-            <div className="flex justify-between gap-4">
-              <button
-                onClick={handleConfirmLogout}
-                className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg text-white"
-              >
-                Yes
-              </button>
-              <button
-                onClick={handleCancelLogout}
-                className="bg-gray-300 hover:bg-gray-400 px-4 py-2 rounded-lg"
-              >
-                No
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center mb-4">
-        
-        
         </div>
         <p className="text-4xl font-bold text-center mb-4 text-main-green">Latest News</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-8">
@@ -125,7 +79,7 @@ export default function Update() {
             <div key={item._id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
               <div className="relative h-48">
                 <img
-                  src={item.picture || '/default-image.jpg'}
+                  src={item.picture}
                   alt={item.headline}
                   className="w-full h-full object-cover"
                 />
@@ -198,7 +152,10 @@ export default function Update() {
             </div>
           </div>
         )}
-      </div>
-    </section>
+    
+        </div>
+        </main>
+        </div>
+        </div>       
   );
 }

@@ -43,11 +43,11 @@ const AdminSidebar = () => {
         <h2 className="text-lg font-semibold mt-8 mb-4">Management</h2>
         <ul className="space-y-2">
           <li 
-            className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/customers' ? 'bg-other-green' : ''}`}
-            onClick={() => handleNavigation('customers')} 
+            className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/adminNews' ? 'bg-other-green' : ''}`}
+            onClick={() => handleNavigation('adminNews')} 
           >
             <UserGroupIcon className="h-5 w-5 mr-2" />
-            Transactions
+            News & Updates
           </li>
         </ul>
         <h2 className="text-lg font-semibold mt-8 mb-4">Settings</h2>

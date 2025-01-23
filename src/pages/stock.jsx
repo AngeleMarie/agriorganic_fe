@@ -17,6 +17,7 @@ export default function AdminProductList() {
     usageGuide: '',
     picture: null,
   });
+  const[selectedProductId,setSelectedProductId]=useState(null)
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [message, setMessage] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -27,11 +28,10 @@ export default function AdminProductList() {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('http://localhost:7654/api/v1/admin/products/');
-        const productsWithImages = response.data.map((product) => ({
-          ...product,
-          picture: product.picture ? getImageUrl(product.picture) : null
+        const receivedProducts= response.data.map((product) => ({
+          ...product
         }));
-        setProducts(productsWithImages);
+        setProducts(receivedProducts);
       } catch (error) {
         console.error('Error fetching products:', error);
         setMessage({ text: 'Failed to fetch products', type: 'error' });
@@ -45,27 +45,37 @@ export default function AdminProductList() {
 
   const calculateSubtotal = (price, quantity) => price * quantity;
 
-  const deleteProduct = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
-    setMessage({ text: 'Product deleted successfully', type: 'success' });
+  const updateProduct = () => {
+
+    setProducts(products.map((product) => (product._id === selectedProduct._id ? selectedProduct : product)));
+    setMessage({ text: 'Product updated successfully', type: 'success' });
     setTimeout(() => setMessage(null), 3000);
+    setEditModalOpen(false);
   };
+
+ 
+
 
   const handleNewProductChange = (e) => {
     const { name, value } = e.target;
     setNewProduct((prev) => ({
       ...prev,
       [name]: name === 'price' || name === 'quantity' ? parseFloat(value) : value,
+      
     }));
   };
 
   const handleImageChange = (event) => {
-    console.log(event.target.files[0]);
-    setNewProduct(prev => ({
-      ...prev,
-      picture: event.target.files[0]
-    }));
+    const file = event.target.files[0];
+    if (file) {
+      const fileURL = URL.createObjectURL(file); // Convert file to URL
+      setNewProduct((prev) => ({
+        ...prev,
+        picture: file,
+      }));
+    }
   };
+  
 
   const addNewProduct = () => {
     if (!newProduct.name || !newProduct.picture || isNaN(newProduct.price) || newProduct.price <= 0 || isNaN(newProduct.quantity) || newProduct.quantity < 0) {
@@ -89,6 +99,24 @@ export default function AdminProductList() {
 
     setTimeout(() => setMessage(null), 3000);
   };
+  const deleteProduct = async (productId) => {
+    try {
+      // Call the delete API
+      await axios.delete(`http://localhost:7654/api/v1/admin/products/${productId}`);
+      
+      // Update the UI by filtering out the deleted product
+      setProducts(products.filter((product) => product._id !== productId));
+      
+      // Show success message
+      setMessage({ text: 'Product deleted successfully', type: 'success' });
+      setTimeout(() => setMessage(null), 3000);
+    } catch (error) {
+      console.error('Error deleting product:', error);
+      setMessage({ text: 'Failed to delete product', type: 'error' });
+      setTimeout(() => setMessage(null), 3000);
+    }
+  };
+  
 
   const handleProductChange = (e) => {
     const { name, value } = e.target;
@@ -97,27 +125,6 @@ export default function AdminProductList() {
       [name]: name === 'price' || name === 'quantity' ? Number(value) : value,
     }));
   };
-
-  const updateProduct = (e) => {
-    e.preventDefault();
-    setProducts(products.map((product) => (product.id === selectedProduct.id ? selectedProduct : product)));
-    setMessage({ text: 'Product updated successfully', type: 'success' });
-    setTimeout(() => setMessage(null), 3000);
-    setEditModalOpen(false);
-  };
-
-  const getImageUrl = (binaryData) => {
-    if (!binaryData) return null;
-    
-    // Check if binaryData is already an array of bytes; if not, access it as needed
-    const uint8Array = binaryData.data ? new Uint8Array(binaryData.data) : new Uint8Array(binaryData);
-    
-    // Convert to base64 string
-    const base64String = `data:image/png;base64,${btoa(String.fromCharCode(...uint8Array))}`;
-    return base64String;
-  };
-  
-
   return (
     <div className="flex h-screen  bg-other-green/5">
       <Sidebar />
@@ -152,26 +159,40 @@ export default function AdminProductList() {
                 {products.map((product) => (
                   <tr key={product.id} className="border-b hover:bg-gray-100">
                     <td className="py-2 px-4 flex items-center">
-                      {product.picture && (
+                
                         <img 
                           src={product.picture} 
                           alt={product.name} 
                           className="w-12 h-12 mr-2"
                         />
-                      )}
+                      
                       {product.name}
                     </td>
                     <td className="py-2 px-4">{parseInt(product?.price).toFixed(2)} Frw</td>
                     <td className="py-2 px-12">{parseInt(product.quantity).toFixed(2)}</td>
                     <td className="py-2 px-4">{calculateSubtotal(product.price, product.quantity)} Frw</td>
                     <td className="py-2 px-4 flex space-x-2">
-                      <button className="ml-2 text-blue-600 hover:text-blue-800" title="View Details" onClick={() => { setSelectedProduct(product); setDetailsModalOpen(true); }}>
-                        <EyeIcon className="w-5 h-5" />
-                      </button>
-                      <button onClick={() => { setSelectedProduct(product); setEditModalOpen(true); }} className="text-yellow-600 hover:text-yellow-800" title="Edit Product">
+                    <button
+  className="ml-2 text-blue-600 hover:text-blue-800"
+  title="View Details"
+  onClick={() => {
+    console.log('Selected Product ID:', product._id); // Debug
+    setSelectedProductId(product._id);
+    setDetailsModalOpen(true);
+  }}
+>
+  <EyeIcon className="w-5 h-5" />
+</button>
+
+                      <button onClick={() => { setSelectedProduct(product); 
+                        setEditModalOpen(true); }} className="text-yellow-600 hover:text-yellow-800" title="Edit Product">
                         <PencilIcon className="w-5 h-5" />
                       </button>
-                      <button onClick={() => deleteProduct(product.id)} className="text-red-600 hover:text-red-800">
+                      <button
+  onClick={() => deleteProduct(product._id)} 
+  className="text-red-600 hover:text-red-800"
+  title="Delete Product"
+>
                         <TrashIcon className="w-5 h-5" />
                       </button>
                     </td>
@@ -192,15 +213,16 @@ export default function AdminProductList() {
           handleImageChange={handleImageChange}
         />
 
-        <ProductDetailsModal
-          isOpen={isDetailsModalOpen}
-          onClose={() => setDetailsModalOpen(false)}
-          product={selectedProduct}
-        />
+<ProductDetailsModal
+  isOpen={isDetailsModalOpen}
+  onClose={() => setDetailsModalOpen(false)}
+  productId={selectedProductId} // Pass selectedProductId
+/>
 
-        <EditProductModal
+<EditProductModal
           isOpen={isEditModalOpen}
           onClose={() => setEditModalOpen(false)}
+          productId={selectedProductId}
           product={selectedProduct}
           setEditProduct={setSelectedProduct}
           handleProductChange={handleProductChange}

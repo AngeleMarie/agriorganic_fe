@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdCancel } from "react-icons/md";
 
 const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProduct }) => {
+
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
     const [imageFile, setImageFile] = useState(null);
@@ -15,9 +16,10 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
                 quantity: product.quantity,
                 description: product.description,
                 usageGuide: product.usageGuide,
+                picture:product.picture
             });
         }
-    }, [product, setEditProduct]);
+    }, []);
 
     if (!isOpen || !product) return null;
 
@@ -59,7 +61,7 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
         formData.append('usageGuide', product.usageGuide);
 
         if (imageFile) {
-            formData.append('imageUrl', imageFile);
+            formData.append('picture', imageFile);
         }
 
         try {
@@ -133,8 +135,7 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
                         <label className="block font-semibold text-main-green">Product Image</label>
                         <input
                             type="file"
-                            name="imageUrl"
-                            accept="image/*"
+                            name="picture"
                             onChange={handleImageChange}
                             className="border-b py-2 outline-none focus:text-other-green w-full"
                         />
