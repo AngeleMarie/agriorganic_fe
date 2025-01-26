@@ -11,7 +11,7 @@ function CurrentPro() {
             Explore our Current project
           </p>
           <p className="text-white text-justify md:text-center  w-2/3 mx-auto text-lg font-normal py-3">
-            Research about assessing biopestide effectivess on treating and
+            Research about assessing biopesticide effectivess on treating and
             preventing pest and disease on maize, beans, and Potatoes in Muko
             and Gataraga sectors of Musanze district
           </p>

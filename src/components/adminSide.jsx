@@ -25,13 +25,13 @@ const AdminSidebar = () => {
       <nav>
         <h2 className="text-lg font-semibold mb-4">Menu</h2>
         <ul className="space-y-2">
-          <li 
+          {/* <li 
             className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/dashboard' ? 'bg-other-green' : ''}`}
             onClick={() => handleNavigation('dashboard')} 
           >
             <ChartBarIcon className="h-5 w-5 mr-2" />
             Dashboard
-          </li>
+          </li> */}
           <li 
             className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/stock' ? 'bg-other-green' : ''}`}
             onClick={() => handleNavigation('stock')} 
@@ -53,8 +53,8 @@ const AdminSidebar = () => {
         <h2 className="text-lg font-semibold mt-8 mb-4">Settings</h2>
         <ul className="space-y-2">
           <li 
-            className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/settings' ? 'bg-other-green' : ''}`}
-            onClick={() => handleNavigation('settings')} 
+            className={`flex items-center cursor-pointer rounded p-2 ${location.pathname === '/profile' ? 'bg-other-green' : ''}`}
+            onClick={() => handleNavigation('profile')} 
           >
             <CogIcon className="h-5 w-5 mr-2" />
             Profile

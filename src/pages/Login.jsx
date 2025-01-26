@@ -15,7 +15,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://agriorgainc-be.onrender.com/api/v1/admin/login', {
+      const response = await fetch('http://localhost:7654/api/v1/users/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, role }),
@@ -65,11 +65,11 @@ export default function LoginPage() {
     <>
       <div className="flex flex-col lg:flex-row min-h-screen">
         {/* Left Section - Image */}
-        <div className="hidden lg:flex lg:w-1/2 items-center justify-center bg-gray-100">
+        <div className="hidden lg:flex lg:w-1/2 items-center justify-center ">
           <img
             src="login.png"
             alt="Agricultural Sprayer"
-            className="rounded-lg shadow-2xl m-auto max-w-xs lg:max-w-sm xl:max-w-md"
+            className="rounded-lg shadow-2xl"
           />
         </div>
 
@@ -117,7 +117,7 @@ export default function LoginPage() {
                 </div>
               </div>
               <button
-                className="w-full bg-[#26693  7] text-white py-3 rounded-md font-semibold hover:bg-green-700 transition duration-300"
+                className="w-full bg-[#266937] text-white py-3 rounded-md font-semibold hover:bg-green-700 transition duration-300"
                 disabled={loading}
               >
                 {loading ? 'Logging In...' : 'Log In'}

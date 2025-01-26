@@ -27,7 +27,7 @@ export default function ContactPage() {
     console.log("Form submitted:", formData);
 
     try {
-      const response = await axios.post('http://localhost:7654/api/v1/problems/addProblem', formData); 
+      const response = await axios.post('https://ecommerce-kpd4.onrender.com/api/v1/problems/addProblem', formData); 
       console.log("Response from server:", response.data);
       setFormData({
         firstName: "",

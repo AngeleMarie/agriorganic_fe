@@ -22,12 +22,13 @@ import Navbar from './components/navbar';
 import Footer from './components/Footer';
 import AddNews from './pages/AddNews';
 import Update from './pages/adminNews';
+import Profile from './pages/Profile';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   // Define the pages where Navbar and Footer should not appear
-  const excludedPaths = ['/dashboard','/stock','/adminNews'];
+  const excludedPaths = ['/stock','/adminNews','/profile'];
 
   // Custom component to manage conditional rendering
   const Layout = ({ children }) => {
@@ -62,11 +63,13 @@ function App() {
           <Route path="/billing" element={<BillingDetails />} />
           <Route path="/cart" element={<MyCart />} />
           <Route path="/wishlist" element={<WishlistAndCategories user={currentUser} />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/stock" element={<AdminProductList />} />
           <Route path="/adminNews" element={< Update/>} />
           <Route path="/customers" element={<Transactions />} />
           <Route path="/addNews" element={<AddNews />} />
+          <Route path="/profile" element={<Profile/>} />
+          <Route path="*" element={<h1>Not Found</h1>} />
 
         </Routes>
       </Layout>

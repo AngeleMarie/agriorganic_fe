@@ -11,7 +11,7 @@ export default function AdminProductList() {
   const [products, setProducts] = useState([]);
   const [newProduct, setNewProduct] = useState({
     name: '',
-    price: 0,
+    type: '',
     quantity: 0,
     description: '',
     usageGuide: '',
@@ -27,7 +27,7 @@ export default function AdminProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:7654/api/v1/admin/products/');
+        const response = await axios.get('https://ecommerce-kpd4.onrender.com/api/v1/admin/products/');
         const receivedProducts= response.data.map((product) => ({
           ...product
         }));
@@ -42,8 +42,6 @@ export default function AdminProductList() {
     fetchProducts();
   }, []);
   
-
-  const calculateSubtotal = (price, quantity) => price * quantity;
 
   const updateProduct = () => {
 
@@ -60,7 +58,7 @@ export default function AdminProductList() {
     const { name, value } = e.target;
     setNewProduct((prev) => ({
       ...prev,
-      [name]: name === 'price' || name === 'quantity' ? parseFloat(value) : value,
+      [name]: name === 'type' || name === 'quantity' ? parseFloat(value) : value,
       
     }));
   };
@@ -68,7 +66,7 @@ export default function AdminProductList() {
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      const fileURL = URL.createObjectURL(file); // Convert file to URL
+      const fileURL = URL.createObjectURL(file);
       setNewProduct((prev) => ({
         ...prev,
         picture: file,
@@ -78,7 +76,7 @@ export default function AdminProductList() {
   
 
   const addNewProduct = () => {
-    if (!newProduct.name || !newProduct.picture || isNaN(newProduct.price) || newProduct.price <= 0 || isNaN(newProduct.quantity) || newProduct.quantity < 0) {
+    if (!newProduct.name || !newProduct.picture || isNaN(newProduct.quantity) || newProduct.quantity < 0) {
       setMessage({ text: 'Please fill all fields correctly', type: 'error' });
       return;
     }
@@ -88,7 +86,7 @@ export default function AdminProductList() {
 
     setNewProduct({
       name: '',
-      price: 0,
+      type: '',
       quantity: 0,
       description: '',
       usageGuide: '',
@@ -102,7 +100,7 @@ export default function AdminProductList() {
   const deleteProduct = async (productId) => {
     try {
       // Call the delete API
-      await axios.delete(`http://localhost:7654/api/v1/admin/products/${productId}`);
+      await axios.delete(`https://ecommerce-kpd4.onrender.com/api/v1/admin/products/${productId}`);
       
       // Update the UI by filtering out the deleted product
       setProducts(products.filter((product) => product._id !== productId));
@@ -122,7 +120,7 @@ export default function AdminProductList() {
     const { name, value } = e.target;
     setSelectedProduct((prev) => ({
       ...prev,
-      [name]: name === 'price' || name === 'quantity' ? Number(value) : value,
+      [name]: name === 'quantity' ? Number(value) : value,
     }));
   };
   return (
@@ -149,9 +147,9 @@ export default function AdminProductList() {
               <thead>
                 <tr>
                   <th className="py-2 px-4 text-left">Product</th>
-                  <th className="py-2 px-4 text-left">Price</th>
+                  <th className="py-2 px-4 text-left">Name</th>
+                  <th className="py-2 px-4 text-left">Type</th>
                   <th className="py-2 px-4 text-left">Quantity</th>
-                  <th className="py-2 px-4 text-left">Subtotal</th>
                   <th className="py-2 px-4 text-left">Actions</th>
                 </tr>
               </thead>
@@ -165,12 +163,12 @@ export default function AdminProductList() {
                           alt={product.name} 
                           className="w-12 h-12 mr-2"
                         />
-                      
+                      </td>
+                      <td>
                       {product.name}
-                    </td>
-                    <td className="py-2 px-4">{parseInt(product?.price).toFixed(2)} Frw</td>
+                      </td>
+                    <td className="py-2 px-4">{product?.type} </td>
                     <td className="py-2 px-12">{parseInt(product.quantity).toFixed(2)}</td>
-                    <td className="py-2 px-4">{calculateSubtotal(product.price, product.quantity)} Frw</td>
                     <td className="py-2 px-4 flex space-x-2">
                     <button
   className="ml-2 text-blue-600 hover:text-blue-800"

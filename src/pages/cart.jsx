@@ -9,7 +9,7 @@ const MyCart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get('http://localhost:7654/api/v1/users/cart', {
+        const response = await axios.get('https://ecommerce-kpd4.onrender.com/api/v1/users/cart', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         setProducts(response.data.items); // Assuming `items` is an array in the response data
@@ -26,7 +26,7 @@ const MyCart = () => {
   const addItem = async (productId, quantity) => {
     try {
       await axios.post(
-        'http://localhost:7654/api/v1/users/cart/add',
+        'https://ecommerce-kpd4.onrender.com/api/v1/users/cart/add',
         { productId, quantity },
         { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
       );

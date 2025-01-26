@@ -14,7 +14,7 @@ const ProductDetailsModal = ({ isOpen, onClose, productId }) => {
       setLoading(true);                             
       console.log(productId);
       
-      const response = await axios.get(`http://localhost:7654/api/v1/admin/products/${productId}`);
+      const response = await axios.get(`https://ecommerce-kpd4.onrender.com/api/v1/admin/products/${productId}`);
       setProduct(response.data);
       setError(null); // Clear errors if successful
     } catch (err) {

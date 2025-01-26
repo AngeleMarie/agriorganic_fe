@@ -16,7 +16,7 @@ export default function Register() {
 
   const handleGoogleSignup = () => {
     try {
-      window.location.href = "http://localhost:7654/api/v1/users/auth/google";
+      window.location.href = "https://ecommerce-kpd4.onrender.com/api/v1/users/auth/google";
     } catch (error) {
       setErrorMessage("Google signup failed. Please try again.");
     }
@@ -55,7 +55,7 @@ export default function Register() {
       return;
     }
     try {
-      await axios.post("http://localhost:7654/api/v1/users/auth/register", formData);
+      await axios.post("https://ecommerce-kpd4.onrender.com/api/v1/users/auth/register", formData);
       setSuccessMessage("Registration successful!");
       setShowPopup(true);
       setErrorMessage("");

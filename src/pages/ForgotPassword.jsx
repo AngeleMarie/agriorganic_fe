@@ -10,6 +10,10 @@ export default function ForgotPassword() {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
+
+  const handleCancel = () => {
+    setSuccess(false);
+  };
   const handleResetPassword = async (e) => {
     e.preventDefault();
     setError(null);
@@ -26,11 +30,12 @@ export default function ForgotPassword() {
 
     try {
       setLoading(true);
-      const response = await fetch('https://agriorgainc-be.onrender.com/api/v1/admin/update', {
-        method: 'POST',
+      const response = await fetch('https://ecommerce-kpd4.onrender.com/api/v1/users/auth/reset', {
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, newPassword }),
-      });
+        body: JSON.stringify({ email, newPassword }), // This aligns with your backend's expectations
+      });      
+    
 
       const data = await response.json();
       if (!response.ok) {
@@ -74,6 +79,7 @@ export default function ForgotPassword() {
               <input
                 type="email"
                 id="email"
+                name='email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full p-2 border-2 border-gray-400/40 outline-none rounded-md focus:border-[#266937]/80 text-other-green"
@@ -87,6 +93,7 @@ export default function ForgotPassword() {
               <input
                 type="password"
                 id="newPassword"
+                name='newPassword'
                 value={newPassword}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-2 border-2 border-gray-400/40 outline-none rounded-md focus:border-[#266937]/80 text-other-green"
@@ -108,7 +115,6 @@ export default function ForgotPassword() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 className="w-full p-2 border-2 border-gray-400/40 outline-none rounded-md focus:border-[#266937]/80 text-other-green"
-                required
               />
               {confirmPassword && newPassword !== confirmPassword && (
                 <p className="text-red-600 text-sm">Passwords do not match</p>
@@ -127,21 +133,30 @@ export default function ForgotPassword() {
 
       {/* Success Modal */}
       {success && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-lg p-8 text-center shadow-lg w-96">
-            <h2 className="text-2xl font-bold mb-4">Congratulations!</h2>
-            <p className="text-gray-700 mb-4">
-              Your password has been reset successfully. You can now log in.
-            </p>
-            <Link
-              to="/login"
-              className="bg-[#266937] text-white py-2 px-6 rounded-md font-medium hover:bg-green-700"
-            >
-              Go to Login
-            </Link>
-          </div>
-        </div>
-      )}
+      <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+      <div className="bg-white rounded-md shadow-lg text-center w-1/3 p-8">
+        <img src="tick.svg" alt="tick" className="mx-auto my-2" />
+        <h2 className="text-xl font-bold mb-4 text-main-green">
+          One way to go 🎉
+        </h2>
+        <p className="text-main-green font-regular pb-4">
+          ✨ Next Step: Check your email for a verification code.
+        </p>
+        <button className="bg-[#266937] text-white py-3 w-full rounded-md my-1 font-medium hover:bg-green-700">
+          <a href="https://mail.google.com" target="_blank" rel="noopener noreferrer">
+            Open Gmail
+          </a>
+        </button>
+
+        <button
+          className="bg-white border border-[#266937] my-1 text-[#266937] py-3 w-full rounded-md font-medium hover:underline underline-offset-2"
+          onClick={handleCancel}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  )}
     </div>
   );
 }

@@ -18,16 +18,15 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
   const handleSaveProduct = async () => {
     setStatus({ message: '', type: '' });
 
-    if (!newProduct.name || !newProduct.price || !newProduct.picture || !newProduct.quantity) {
+    if (!newProduct.name || !newProduct.type || !newProduct.picture || !newProduct.quantity) {
       setStatus({ message: 'Please fill out all required fields.', type: 'error' });
       return;
     }
 
-    const price = Number(newProduct.price);
     const quantity = Number(newProduct.quantity);
 
-    if (isNaN(price) || isNaN(quantity)) {
-      setStatus({ message: 'Price and quantity must be valid numbers.', type: 'error' });
+    if ( isNaN(quantity)) {
+      setStatus({ message: 'Quantity must be valid numbers.', type: 'error' });
       return;
     }
 
@@ -35,16 +34,17 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
     try {
       const formData = new FormData();
       formData.append('name', newProduct.name);
-      formData.append('price', newProduct.price);
+      formData.append('type', newProduct.type);
       formData.append('quantity', newProduct.quantity);
       formData.append('description', newProduct.description);
       formData.append('usageGuide', newProduct.usageGuide);
       formData.append('picture', newProduct.picture);
 
-      const response = await fetch('http://localhost:7654/api/v1/admin/products/addProduct', {
+      const response = await fetch('https://ecommerce-kpd4.onrender.com/api/v1/admin/products/addProduct', {
         method: 'POST',
         body: formData,
       });
+      
 
       const data = await response.json();
       if (response.ok) {
@@ -53,7 +53,7 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
         setNewProduct({
           name: '',
           picture: '',
-          price: 0,
+          type: '',
           quantity: 0,
           description: '',
           usageGuide: '',
@@ -99,12 +99,12 @@ const AddProductModal = ({ isOpen, onClose, newProduct, setNewProduct, addNewPro
         </div>
 
         <div className="mt-4">
-          <label htmlFor="newProductPrice" className="block text-sm font-semibold text-main-green">Price</label>
+          <label htmlFor="newProductType" className="block text-sm font-semibold text-main-green">Type</label>
           <input
-            type="number"
-            id="newProductPrice"
-            name="price"
-            value={newProduct.price || ''}
+            type="text"
+            id="newProductType"
+            name="type"
+            value={newProduct.type || ''}
             onChange={handleNewProductChange}
             className="mt-1 border-b w-full outline-none text-other-green"
           />

@@ -19,7 +19,7 @@ const WishlistAndCategories = ({ user }) => {
       console.log('User ID:', user._id);
       const fetchWishlist = async () => {
         try {
-          const response = await axios.get(`http://localhost:7654/api/v1/users/wishlist/${user._id}`);
+          const response = await axios.get(`https://ecommerce-kpd4.onrender.com/api/v1/users/wishlist/${user._id}`);
           setProducts(response.data);
           console.log(response.data);
         } catch (error) {

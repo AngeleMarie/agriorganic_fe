@@ -12,7 +12,7 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
         if (product) {
             setEditProduct({
                 name: product.name,
-                price: product.price,
+                type: product.type,
                 quantity: product.quantity,
                 description: product.description,
                 usageGuide: product.usageGuide,
@@ -40,23 +40,24 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
         setSuccess('');
 
         // Validate fields
-        if (!product.name || !product.price || !product.quantity) {
+        if (!product.name || !product.quantity) {
             setError('Please fill out all required fields.');
             return;
+
         }
 
-        const price = Number(product.price);
+    
         const quantity = Number(product.quantity);
 
-        if (isNaN(price) || isNaN(quantity)) {
-            setError('Price and quantity must be valid numbers.');
+        if ( isNaN(quantity)) {
+            setError('Quantity must be valid numbers.');
             return;
         }
 
         const formData = new FormData();
         formData.append('name', product.name);
-        formData.append('price', price);
-        formData.append('quantity', quantity);
+        formData.append('type', product.type)    ;
+        formData.append('quantity', product.quantity);
         formData.append('description', product.description);
         formData.append('usageGuide', product.usageGuide);
 
@@ -65,7 +66,7 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
         }
 
         try {
-            const response = await fetch(`http://localhost:7654/api/v1/admin/products/update/${product._id}`, {
+            const response = await fetch(`https://ecommerce-kpd4.onrender.com/api/v1/admin/products/update/${product._id}`, {
                 method: 'PUT',
                 body: formData,
             });
@@ -74,7 +75,7 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
             if (response.ok) {
                 updateProduct(data.product);
                 setSuccess('Product edited successfully!');
-                setEditProduct({ name: '', price: 0, quantity: 0, description: '', usageGuide: '' });
+                setEditProduct({ name: '', type: '', quantity: 0, description: '', usageGuide: '' });
                 setImageFile(null);
                 setTimeout(() => {
                     setSuccess('');
@@ -112,11 +113,11 @@ const EditProductModal = ({ isOpen, onClose, product, setEditProduct, updateProd
                         />
                     </div>
                     <div className='p-2'>
-                        <label className="block text-main-green font-semibold">Price</label>
+                        <label className="block text-main-green font-semibold">Type</label>
                         <input
-                            type="number"
-                            name="price"
-                            value={product.price}
+                            type="text"
+                            name="type"
+                            value={product.type}
                             onChange={handleProductChange}
                             className="border-b py-2 outline-none focus:text-other-green w-full"
                         />
